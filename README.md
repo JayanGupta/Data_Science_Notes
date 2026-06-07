@@ -1,12 +1,12 @@
 <div align="center">
 
 <!-- Animated Typing Header -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=900&height=100&lines=%F0%9F%93%8A+Data+Science+Notes;From+Fundamentals+to+Machine+Learning" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=900&height=100&lines=%F0%9F%93%8A+Data+Science+Notes;Interactive+Beginner-Friendly+Machine+Learning" alt="Typing SVG" /></a>
 
 <br/>
 
 <!-- Animated Wave Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:00d9ff&height=200&section=header&text=Data%20Science%20Notes&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=A%20comprehensive%20collection%20of%20notes%2C%20datasets%20%26%20implementations&descSize=18&descAlignY=55&descColor=58a6ff" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:00d9ff&height=200&section=header&text=Data%20Science%20Notes&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Interactive%20classroom-quality%20Jupyter%20Notebooks%20for%20Machine%20Learning&descSize=18&descAlignY=55&descColor=58a6ff" width="100%"/>
 
 <br/>
 
@@ -31,8 +31,6 @@
 <!-- Badges Row 3 - Tools -->
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
@@ -45,14 +43,21 @@
 
 ---
 
-<!-- Animated Divider -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🧠 About This Repository
 
-> *A structured, day-by-day learning journey through Data Science & Machine Learning — complete with detailed notes, real-world datasets, SQL exercises, and Python implementations.*
+> *A structured, day-by-day learning journey through Data Science & Machine Learning — complete with interactive teaching notebooks, literal/clear datasets, visual benchmarks, and detailed descriptions.*
 
-This repository serves as a **one-stop knowledge base** for anyone diving into Data Science. Whether you're a beginner exploring the fundamentals or someone brushing up on ML algorithms, these notes cover the essential building blocks with hands-on code and curated datasets.
+This repository acts as an **interactive classroom resource** for anyone starting out in Machine Learning. Instead of complicated code abstractions, pipelines, and mathematical jargon, the resources are designed to highlight **simplicity, learning, and visual interpretation**.
+
+### 🌟 Core Notebook Highlights
+* **Literal Datasets**: Datasets are hardcoded directly in Python code lists instead of using random generators. You can see and read every single record!
+* **16-Step ML Lifecycle**: Every notebook guides you systematically from introductions, Exploratory Data Analysis (EDA), cleaning, and splitting, to training, evaluations, performance plotting, and interpretation.
+* **Explanation Pointers**: Theoretical concepts, models, and metric meanings are broken down using simple bulleted pointers.
+* **Observations**: Every single execution step ends with a clear explanation answering: *"What Did We Observe?"* and *"What Did We Learn?"*.
+
+---
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -61,130 +66,84 @@ This repository serves as a **one-stop knowledge base** for anyone diving into D
 ```
 📦 Data_Science_Notes
 │
-├── 📂 notes/
-│   ├── 📁 Day 1 — Introduction to DS and ML
-│   ├── 📁 Day 2 — Introduction to Scikit-Learn
-│   ├── 📁 Day 3 — Data Preparation & Feature Engineering
-│   ├── 📁 Day 4 — Linear Regression (Notes + Notebook)
-│   ├── 📁 Day 5 — Logistic Regression
-│   ├── ...
-│   └── 📁 temp/ — Supplementary scripts & materials
+├── 📂 models/                             # Interactive Teaching Notebooks
+│   ├── 📈 Linear_Regression.ipynb
+│   ├── 📈 Ridge_Regression.ipynb
+│   ├── 📈 Lasso_Regression.ipynb
+│   ├── 🎯 Logistic_Regression.ipynb
+│   ├── 🌲 Decision_Tree.ipynb
+│   ├── 👥 KNN.ipynb
+│   ├── ⚡ SVM.ipynb
+│   ├── ✉️ Naive_Bayes.ipynb
+│   ├── 🌳 Random_Forest.ipynb
+│   ├── 🚀 AdaBoost.ipynb
+│   ├── 🔥 XGBoost.ipynb
+│   ├── 🧬 K_Means.ipynb
+│   └── 📉 PCA.ipynb
 │
-├── 📂 datasets/
+├── 📂 datasets/                           # Accompanying CSV Datasets
 │   ├── 📊 Salary_Data.csv
 │   ├── 📊 Titanic-Dataset.csv
 │   ├── 📊 Telco-Customer-Churn.csv
-│   ├── ....
+│   └── ....
 │
 └── 📄 README.md
 ```
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## 📚 Day-by-Day Curriculum
-
-<table>
-<tr>
-<th>📅 Day</th>
-<th>📖 Topic</th>
-<th>📝 Format</th>
-<th>🔑 Key Concepts</th>
-</tr>
-
-<tr>
-<td align="center"><b>1</b></td>
-<td>🚀 Introduction to DS & ML</td>
-<td><code>HTML</code></td>
-<td>What is Data Science, Types of ML, Supervised vs Unsupervised, Applications</td>
-</tr>
-
-<tr>
-<td align="center"><b>2</b></td>
-<td>🔧 Introduction to Scikit-Learn</td>
-<td><code>HTML</code></td>
-<td>Sklearn ecosystem, Estimators, Transformers, Pipelines, Model Selection</td>
-</tr>
-
-<tr>
-<td align="center"><b>3</b></td>
-<td>🧹 Data Preparation & Feature Engineering</td>
-<td><code>HTML</code></td>
-<td>Missing values, Encoding, Scaling, Feature selection, Train-Test split</td>
-</tr>
-
-<tr>
-<td align="center"><b>4</b></td>
-<td>📈 Linear Regression</td>
-<td><code>HTML</code> <code>Notebook</code> <code>Python</code></td>
-<td>OLS, Gradient Descent, sklearn Pipeline, StandardScaler, OneHotEncoder, Predictions</td>
-</tr>
-
-<tr>
-<td align="center"><b>5</b></td>
-<td>🎯 Logistic Regression</td>
-<td><code>HTML</code></td>
-<td>Binary Classification, Sigmoid function, Decision Boundary, Evaluation Metrics</td>
-</tr>
-
-<tr>
-<td align="center"><b>...</b></td>
-<td><b>...</b></td>
-<td><code>HTML</code></td>
-<td><b>...</b></td>
-</tr>
-</table>
+---
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-## 🛠️ Tech Stack & Skills
+## 📚 Machine Learning Notebook Suite
 
-<div align="center">
+| Notebook | Algorithm Type | Problem Description | Key Visualizations |
+| :--- | :--- | :--- | :--- |
+| [Linear Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Linear_Regression.ipynb) | Supervised Regression | Predict exam scores using weekly study hours. | Actual vs. Predicted Scatter, Residual Plot |
+| [Ridge Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Ridge_Regression.ipynb) | Supervised Regression | Predict scores with correlated features (L2 penalty). | Actual vs. Predicted, Residual Plot |
+| [Lasso Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Lasso_Regression.ipynb) | Supervised Regression | Predict scores while filtering out Shoe Size (L1 penalty). | Actual vs. Predicted, Feature Coefficients Bar |
+| [Logistic Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Logistic_Regression.ipynb) | Supervised Classification | Predict if a student will Pass or Fail. | Confusion Matrix Heatmap, Sigmoid Curve |
+| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict if visitor buys a premium product. | Flowchart Tree Structure, Feature Importance |
+| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Predict athlete sport from height & weight. | 2D Decision Boundary Contour, Confusion Heatmap |
+| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify fitness screening outcomes. | Hyperplane & Margins, Support Vector Highlights |
+| [Naive Bayes](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Naive_Bayes.ipynb) | Supervised Classification | Filter spam emails. | Probability Density Curve, Confusion Heatmap |
+| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict loan approvals using bagging ensembles. | Feature Importance, Single Estimator Tree |
+| [AdaBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/AdaBoost.ipynb) | Supervised Classification | Predict card payment defaults (boosting). | Feature Importance, Confusion Matrix Heatmap |
+| [XGBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/XGBoost.ipynb) | Supervised Classification | Predict borrower default limits (gradient boosting). | Feature Importance, Confusion Matrix Heatmap |
+| [K-Means](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/K_Means.ipynb) | Unsupervised Clustering | Segment retail store shoppers. | Segment Scatter with Centroids, Elbow Curve |
+| [PCA](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/PCA.ipynb) | Unsupervised Dimensionality | Compress student subject grades to 2 dimensions. | Scree Plot (Explained Variance), 2D PC Scatter |
 
-### 🐍 Languages
-<p>
-<img src="https://skillicons.dev/icons?i=python&theme=dark" height="50"/>
-&nbsp;&nbsp;
-<img src="https://skillicons.dev/icons?i=mysql&theme=dark" height="50"/>
-</p>
-
-### 📚 Libraries & Frameworks
-<p>
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-<img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" />
-<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white" />
-</p>
-
-### 🧰 Tools & Platforms
-<p>
-<img src="https://skillicons.dev/icons?i=vscode,github,git&theme=dark" height="50"/>
-&nbsp;&nbsp;
-<img src="https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white" />
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
-</p>
-
-</div>
+---
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🗺️ Learning Roadmap
 
 ```mermaid
-graph LR
-    A[🎯 Day 1<br/>DS & ML Intro] --> B[🔧 Day 2<br/>Scikit-Learn]
-    B --> C[🧹 Day 3<br/>Feature Engineering]
-    C --> D[📈 Day 4<br/>Linear Regression]
-    D --> E[🎯 Day 5<br/>Logistic Regression]
-    E --> F[🔮 Coming Soon<br/>More Algorithms]
+graph TD
+    A[📈 Regression] --> A1[Linear Regression]
+    A --> A2[Ridge Regression]
+    A --> A3[Lasso Regression]
+    
+    B[🎯 Classification] --> B1[Logistic Regression]
+    B --> B2[Decision Tree]
+    B --> B3[KNN]
+    B --> B4[SVM]
+    B --> B5[Naive Bayes]
+    
+    C[🌲 Ensembles] --> C1[Random Forest]
+    C --> C2[AdaBoost]
+    C --> C3[XGBoost]
+    
+    D[🧬 Unsupervised] --> D1[K-Means Clustering]
+    D --> D2[PCA Dimension Reduction]
 
     style A fill:#0d1117,stroke:#00d9ff,color:#ffffff
     style B fill:#0d1117,stroke:#7c3aed,color:#ffffff
     style C fill:#0d1117,stroke:#34d399,color:#ffffff
     style D fill:#0d1117,stroke:#fbbf24,color:#ffffff
-    style E fill:#0d1117,stroke:#f472b6,color:#ffffff
-    style F fill:#0d1117,stroke:#6b7280,color:#ffffff,stroke-dasharray: 5 5
 ```
+
+---
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -198,6 +157,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 4. 📤 Push to the Branch (`git push origin feature/AmazingFeature`)
 5. 🔃 Open a Pull Request
 
+---
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## ⭐ Show Your Support
@@ -207,16 +168,6 @@ Give a ⭐ if this project helped you! It motivates to keep adding more content.
 <div align="center">
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JayanGupta/Data_Science_Notes&type=Date&theme=dark)](https://star-history.com/#JayanGupta/Data_Science_Notes&Date)
-
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-## 📬 Connect With Me
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-JayanGupta-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JayanGupta)
 
 </div>
 
