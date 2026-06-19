@@ -52,7 +52,7 @@
 This repository acts as an **interactive classroom resource** for anyone starting out in Machine Learning. Instead of complicated code abstractions, pipelines, and mathematical jargon, the resources are designed to highlight **simplicity, learning, and visual interpretation**.
 
 ### 🌟 Core Notebook Highlights
-* **Literal Datasets**: Datasets are hardcoded directly in Python code lists instead of using random generators. You can see and read every single record!
+* **Standard scikit-learn Datasets**: Every notebook is migrated to use standard, community-recognized datasets (`load_diabetes`, `load_breast_cancer`, `load_iris`, and `load_wine`) loaded programmatically.
 * **16-Step ML Lifecycle**: Every notebook guides you systematically from introductions, Exploratory Data Analysis (EDA), cleaning, and splitting, to training, evaluations, performance plotting, and interpretation.
 * **Explanation Pointers**: Theoretical concepts, models, and metric meanings are broken down using simple bulleted pointers.
 * **Observations**: Every single execution step ends with a clear explanation answering: *"What Did We Observe?"* and *"What Did We Learn?"*.
@@ -98,19 +98,19 @@ This repository acts as an **interactive classroom resource** for anyone startin
 
 | Notebook | Algorithm Type | Problem Description | Key Visualizations |
 | :--- | :--- | :--- | :--- |
-| [Linear Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Linear_Regression.ipynb) | Supervised Regression | Predict exam scores using weekly study hours. | Actual vs. Predicted Scatter, Residual Plot |
-| [Ridge Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Ridge_Regression.ipynb) | Supervised Regression | Predict scores with correlated features (L2 penalty). | Actual vs. Predicted, Residual Plot |
-| [Lasso Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Lasso_Regression.ipynb) | Supervised Regression | Predict scores while filtering out Shoe Size (L1 penalty). | Actual vs. Predicted, Feature Coefficients Bar |
-| [Logistic Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Logistic_Regression.ipynb) | Supervised Classification | Predict if a student will Pass or Fail. | Confusion Matrix Heatmap, Sigmoid Curve |
-| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict if visitor buys a premium product. | Flowchart Tree Structure, Feature Importance |
-| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Predict athlete sport from height & weight. | 2D Decision Boundary Contour, Confusion Heatmap |
-| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify fitness screening outcomes. | Hyperplane & Margins, Support Vector Highlights |
-| [Naive Bayes](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Naive_Bayes.ipynb) | Supervised Classification | Filter spam emails. | Probability Density Curve, Confusion Heatmap |
-| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict loan approvals using bagging ensembles. | Feature Importance, Single Estimator Tree |
-| [AdaBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/AdaBoost.ipynb) | Supervised Classification | Predict card payment defaults (boosting). | Feature Importance, Confusion Matrix Heatmap |
-| [XGBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/XGBoost.ipynb) | Supervised Classification | Predict borrower default limits (gradient boosting). | Feature Importance, Confusion Matrix Heatmap |
-| [K-Means](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/K_Means.ipynb) | Unsupervised Clustering | Segment retail store shoppers. | Segment Scatter with Centroids, Elbow Curve |
-| [PCA](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/PCA.ipynb) | Unsupervised Dimensionality | Compress student subject grades to 2 dimensions. | Scree Plot (Explained Variance), 2D PC Scatter |
+| [Linear Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Linear_Regression.ipynb) | Supervised Regression | Predict diabetes progression using clinical body metrics (`load_diabetes`). | Actual vs. Predicted Scatter, Residual Plot |
+| [Ridge Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Ridge_Regression.ipynb) | Supervised Regression | Predict diabetes progression using regularized weights with an L2 penalty (`load_diabetes`). | Actual vs. Predicted, Residual Plot |
+| [Lasso Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Lasso_Regression.ipynb) | Supervised Regression | Predict diabetes progression while shrinking irrelevant noise coefficients via an L1 penalty (`load_diabetes`). | Actual vs. Predicted, Feature Coefficients Bar |
+| [Logistic Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Logistic_Regression.ipynb) | Supervised Classification | Predict if a tumor diagnosis is benign or malignant (`load_breast_cancer`). | Confusion Matrix Heatmap, 1D Sigmoid Curve |
+| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict wine classification using tree splitting (`load_wine`). | Flowchart Tree Structure, Feature Importance |
+| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Classify Iris flower species from sepal measurements (`load_iris`). | 2D Decision Boundary Contour, Confusion Heatmap |
+| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify breast cancer tumors using support vector boundaries (`load_breast_cancer`). | Hyperplane & Margins, Support Vector Highlights |
+| [Naive Bayes](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Naive_Bayes.ipynb) | Supervised Classification | Predict Iris flower species using probability likelihoods (`load_iris`). | Probability Density Curve, Confusion Heatmap |
+| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict wine classification using bagging ensembles (`load_wine`). | Feature Importance, Single Estimator Tree |
+| [AdaBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/AdaBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using boosting ensembles (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
+| [XGBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/XGBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using gradient boosting (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
+| [K-Means](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/K_Means.ipynb) | Unsupervised Clustering | Cluster unlabeled Iris flower samples into 3 segments (`load_iris`). | Segment Scatter with Centroids, Elbow Curve |
+| [PCA](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/PCA.ipynb) | Unsupervised Dimensionality | Compress 30 breast cancer dimensions to 2 principal components (`load_breast_cancer`). | Scree Plot (Explained Variance), 2D PC Scatter |
 
 ---
 
