@@ -68,8 +68,6 @@ This repository acts as an **interactive classroom resource** for anyone startin
 │
 ├── 📂 models/                             # Interactive Teaching Notebooks
 │   ├── 📈 Linear_Regression.ipynb
-│   ├── 📈 Ridge_Regression.ipynb
-│   ├── 📈 Lasso_Regression.ipynb
 │   ├── 🎯 Logistic_Regression.ipynb
 │   ├── 🌲 Decision_Tree.ipynb
 │   ├── 👥 KNN.ipynb
@@ -99,14 +97,12 @@ This repository acts as an **interactive classroom resource** for anyone startin
 | Notebook | Algorithm Type | Problem Description | Key Visualizations |
 | :--- | :--- | :--- | :--- |
 | [Linear Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Linear_Regression.ipynb) | Supervised Regression | Predict diabetes progression using clinical body metrics (`load_diabetes`). | Actual vs. Predicted Scatter, Residual Plot |
-| [Ridge Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Ridge_Regression.ipynb) | Supervised Regression | Predict diabetes progression using regularized weights with an L2 penalty (`load_diabetes`). | Actual vs. Predicted, Residual Plot |
-| [Lasso Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Lasso_Regression.ipynb) | Supervised Regression | Predict diabetes progression while shrinking irrelevant noise coefficients via an L1 penalty (`load_diabetes`). | Actual vs. Predicted, Feature Coefficients Bar |
 | [Logistic Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Logistic_Regression.ipynb) | Supervised Classification | Predict if a tumor diagnosis is benign or malignant (`load_breast_cancer`). | Confusion Matrix Heatmap, 1D Sigmoid Curve |
-| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict wine classification using tree splitting (`load_wine`). | Flowchart Tree Structure, Feature Importance |
-| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Classify Iris flower species from sepal measurements (`load_iris`). | 2D Decision Boundary Contour, Confusion Heatmap |
-| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify breast cancer tumors using support vector boundaries (`load_breast_cancer`). | Hyperplane & Margins, Support Vector Highlights |
+| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict Iris flower species using tree splitting (`load_iris`). | Flowchart Tree Structure, Feature Importance |
+| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Classify Iris flower species from petal measurements (`load_iris`). | 2D Decision Boundary Contour, Confusion Heatmap |
+| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify Iris flower species using support vector boundaries (`load_iris`). | Decision Boundary Contour, Support Vector Highlights |
 | [Naive Bayes](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Naive_Bayes.ipynb) | Supervised Classification | Predict Iris flower species using probability likelihoods (`load_iris`). | Probability Density Curve, Confusion Heatmap |
-| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict wine classification using bagging ensembles (`load_wine`). | Feature Importance, Single Estimator Tree |
+| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict Iris flower species using bagging ensembles (`load_iris`). | Feature Importance, Single Estimator Tree |
 | [AdaBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/AdaBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using boosting ensembles (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
 | [XGBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/XGBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using gradient boosting (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
 | [K-Means](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/K_Means.ipynb) | Unsupervised Clustering | Cluster unlabeled Iris flower samples into 3 segments (`load_iris`). | Segment Scatter with Centroids, Elbow Curve |
@@ -121,8 +117,6 @@ This repository acts as an **interactive classroom resource** for anyone startin
 ```mermaid
 graph TD
     A[📈 Regression] --> A1[Linear Regression]
-    A --> A2[Ridge Regression]
-    A --> A3[Lasso Regression]
     
     B[🎯 Classification] --> B1[Logistic Regression]
     B --> B2[Decision Tree]
