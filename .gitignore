@@ -1,0 +1,2 @@
+# Ignore the uncompressed credit card fraud detection dataset as it exceeds 100MB
+datasets/creditcard.csv

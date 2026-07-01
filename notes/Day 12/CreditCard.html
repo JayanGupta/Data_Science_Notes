@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit Card Fraud Detection — End-to-End ML Pipeline by Jayan Gupta</title>
+<meta name="description" content="An end-to-end machine learning workshop covering credit card fraud detection with KNN, XGBoost, GridSearchCV, and RandomizedSearchCV.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-primary: #07090f;
+  --bg-secondary: #0c0f1d;
+  --bg-card: rgba(255,255,255,0.045);
+  --bg-card-hover: rgba(255,255,255,0.08);
+  --accent-red: #ff4d6d;
+  --accent-orange: #ff8c42;
+  --accent-blue: #4361ee;
+  --accent-cyan: #00d4ff;
+  --accent-green: #06d6a0;
+  --accent-purple: #b481f7;
+  --accent-pink: #f72585;
+  --text-primary: #eef0f8;
+  --text-secondary: #8892b0;
+  --text-dim: #4a5568;
+  --gradient-hero: linear-gradient(135deg, #ff4d6d 0%, #ff8c42 40%, #f72585 100%);
+  --gradient-blue: linear-gradient(135deg, #4361ee, #00d4ff);
+  --gradient-green: linear-gradient(135deg, #06d6a0, #00d4ff);
+  --gradient-purple: linear-gradient(135deg, #b481f7, #f72585);
+  --gradient-danger: linear-gradient(135deg, #ff4d6d, #ff8c42);
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  --border-subtle: rgba(255,255,255,0.07);
+}
+
+html, body {
+  height: 100%; width: 100%;
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ============================================================
+   ANIMATED BACKGROUND GRID
+   ============================================================ */
+.deck::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,77,109,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,77,109,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none; z-index: 0;
+}
+
+/* ============================================================
+   SLIDE ENGINE
+   ============================================================ */
+.deck { position: relative; width: 100vw; height: 100vh; }
+
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 48px 80px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(50px);
+  overflow-y: auto;
+}
+.slide.active { opacity: 1; visibility: visible; transform: translateX(0); }
+.slide.prev { opacity: 0; visibility: hidden; transform: translateX(-50px); }
+
+/* ============================================================
+   PROGRESS & NAVIGATION
+   ============================================================ */
+.progress-track {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 3px; background: rgba(255,255,255,0.06); z-index: 100;
+}
+.progress-bar {
+  height: 100%; background: var(--gradient-hero);
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(255,77,109,0.5);
+}
+.slide-counter {
+  position: fixed; bottom: 16px; right: 32px;
+  font-size: 13px; color: var(--text-dim);
+  font-family: var(--font-mono); z-index: 100;
+  letter-spacing: 1px;
+}
+.nav-hint {
+  position: fixed; bottom: 16px; left: 32px;
+  font-size: 11px; color: var(--text-dim); z-index: 100;
+  letter-spacing: 0.5px;
+}
+.nav-arrows {
+  position: fixed; top: 50%; right: 20px;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 8px; z-index: 100;
+}
+.nav-arrows button {
+  width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04); color: var(--text-dim);
+  border-radius: 10px; cursor: pointer; font-size: 14px;
+  transition: all 0.25s; backdrop-filter: blur(8px);
+}
+.nav-arrows button:hover {
+  background: rgba(255,77,109,0.12); color: var(--accent-red);
+  border-color: rgba(255,77,109,0.3);
+  box-shadow: 0 0 12px rgba(255,77,109,0.2);
+}
+.slide-dots {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 100;
+}
+.slide-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  transition: all 0.3s ease; cursor: pointer;
+}
+.slide-dot.active {
+  background: var(--accent-red);
+  box-shadow: 0 0 8px rgba(255,77,109,0.6);
+  width: 18px; border-radius: 3px;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1 { font-size: 3.4rem; font-weight: 800; line-height: 1.12; letter-spacing: -1.5px; }
+h2 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.8px; }
+h3 { font-size: 1.3rem; font-weight: 600; line-height: 1.3; }
+p, li { font-size: 1.1rem; line-height: 1.75; color: var(--text-secondary); }
+
+.gradient-text { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-blue { background: var(--gradient-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-green { background: var(--gradient-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-purple { background: var(--gradient-purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.red { color: var(--accent-red); }
+.blue { color: var(--accent-blue); }
+.cyan { color: var(--accent-cyan); }
+.green { color: var(--accent-green); }
+.orange { color: var(--accent-orange); }
+.purple { color: var(--accent-purple); }
+.pink { color: var(--accent-pink); }
+.dim { color: var(--text-dim); }
+.mono { font-family: var(--font-mono); font-size: 0.88em; }
+
+/* ============================================================
+   SLIDE LAYOUTS
+   ============================================================ */
+.slide-content { max-width: 1100px; width: 100%; text-align: center; position: relative; z-index: 1; }
+.slide-content.left { text-align: left; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; max-width: 1200px; width: 100%; text-align: left; position: relative; z-index: 1; }
+.split-3 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; max-width: 1200px; width: 100%; text-align: left; position: relative; z-index: 1; }
+
+/* ============================================================
+   CARDS & BOXES
+   ============================================================ */
+.card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: 18px; padding: 22px 26px; margin: 10px 0;
+  backdrop-filter: blur(12px); transition: all 0.3s ease;
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  pointer-events: none;
+}
+.card:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.12); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+.card.red-border { border-color: rgba(255,77,109,0.3); }
+.card.red-border:hover { border-color: rgba(255,77,109,0.5); box-shadow: 0 8px 30px rgba(255,77,109,0.12); }
+.card.blue-border { border-color: rgba(67,97,238,0.3); }
+.card.blue-border:hover { border-color: rgba(67,97,238,0.5); box-shadow: 0 8px 30px rgba(67,97,238,0.12); }
+.card.green-border { border-color: rgba(6,214,160,0.3); }
+.card.green-border:hover { border-color: rgba(6,214,160,0.5); box-shadow: 0 8px 30px rgba(6,214,160,0.12); }
+.card.purple-border { border-color: rgba(180,129,247,0.3); }
+.card.orange-border { border-color: rgba(255,140,66,0.3); }
+
+.stat-card {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: 18px; padding: 26px 20px; text-align: center;
+  transition: all 0.3s ease;
+}
+.stat-card:hover { transform: translateY(-3px); }
+.stat-number { font-size: 2.8rem; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+.stat-label { font-size: 0.88rem; color: var(--text-dim); margin-top: 8px; line-height: 1.5; }
+
+.callout {
+  border-left: 3px solid var(--accent-green); padding: 14px 20px;
+  background: rgba(6,214,160,0.06); border-radius: 0 14px 14px 0;
+  margin: 12px 0; text-align: left; transition: all 0.3s ease;
+}
+.callout.red { border-left-color: var(--accent-red); background: rgba(255,77,109,0.06); }
+.callout.blue { border-left-color: var(--accent-blue); background: rgba(67,97,238,0.06); }
+.callout.orange { border-left-color: var(--accent-orange); background: rgba(255,140,66,0.06); }
+.callout.purple { border-left-color: var(--accent-purple); background: rgba(180,129,247,0.06); }
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+.code-block {
+  background: #080a14; border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 18px 22px; text-align: left;
+  font-family: var(--font-mono); font-size: 0.83rem; line-height: 1.7;
+  color: #c9d1d9; overflow-x: auto; margin: 10px 0; position: relative;
+}
+.code-block::before {
+  content: ''; position: absolute; top: 12px; left: 14px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #ff5f57; box-shadow: 16px 0 #febc2e, 32px 0 #28c840;
+}
+.code-block .code-inner { padding-top: 16px; display: block; }
+.code-block .kw { color: #ff79c6; }
+.code-block .fn { color: #50fa7b; }
+.code-block .str { color: #f1fa8c; }
+.code-block .num { color: #bd93f9; }
+.code-block .cm { color: #6272a4; font-style: italic; }
+.code-block .op { color: #ff5555; }
+.code-block .cls { color: #8be9fd; }
+.code-block .var { color: #f8f8f2; }
+
+/* ============================================================
+   GRID LAYOUTS
+   ============================================================ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 12px 0; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin: 12px 0; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; margin: 12px 0; }
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  margin: 12px 0; font-size: 0.88rem;
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+th {
+  background: rgba(255,77,109,0.1); padding: 10px 14px;
+  text-align: left; font-weight: 600; color: var(--accent-red);
+  border-bottom: 1px solid rgba(255,77,109,0.2);
+  font-size: 0.82rem; letter-spacing: 0.5px;
+}
+td {
+  padding: 9px 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary); font-size: 0.86rem;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.025); }
+
+ul { list-style: none; padding: 0; }
+ul li { padding: 5px 0; position: relative; padding-left: 20px; }
+ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-red); }
+
+.divider { width: 60px; height: 3px; border-radius: 3px; background: var(--gradient-hero); margin: 16px auto; }
+.divider.left { margin: 16px 0; }
+
+.phase-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 16px; border-radius: 30px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; margin-bottom: 12px;
+  border: 1px solid currentColor;
+}
+
+.result-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 0.78rem; font-weight: 600;
+  background: rgba(6,214,160,0.12); color: var(--accent-green);
+  border: 1px solid rgba(6,214,160,0.2); margin: 3px;
+}
+
+.step-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 18px; border-radius: 14px;
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  margin: 7px 0; transition: all 0.3s ease;
+}
+.step-row:hover { background: var(--bg-card-hover); transform: translateX(4px); }
+.step-icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+
+.bar-chart-row { display: flex; align-items: center; gap: 10px; margin: 7px 0; }
+.bar-label { width: 160px; text-align: right; font-size: 0.85rem; color: var(--text-secondary); flex-shrink: 0; }
+.bar-track { flex: 1; background: rgba(255,255,255,0.06); border-radius: 8px; height: 24px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 8px; display: flex; align-items: center; padding-left: 8px; font-size: 0.76rem; font-weight: 700; transition: width 1s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+.float { animation: float 4s ease-in-out infinite; }
+
+.slide.active .anim-1 { animation: slideUp 0.5s ease 0.06s both; }
+.slide.active .anim-2 { animation: slideUp 0.5s ease 0.16s both; }
+.slide.active .anim-3 { animation: slideUp 0.5s ease 0.26s both; }
+.slide.active .anim-4 { animation: slideUp 0.5s ease 0.36s both; }
+.slide.active .anim-5 { animation: slideUp 0.5s ease 0.46s both; }
+.slide.active .anim-6 { animation: slideUp 0.5s ease 0.56s both; }
+
+.bg-glow { position: absolute; width: 380px; height: 380px; border-radius: 50%; filter: blur(110px); opacity: 0.07; pointer-events: none; z-index: 0; }
+.bg-glow-sm { position: absolute; width: 200px; height: 200px; border-radius: 50%; filter: blur(70px); opacity: 0.10; pointer-events: none; z-index: 0; }
+
+.winner-row td { color: var(--accent-green) !important; font-weight: 700; }
+.metric-badge {
+  display: inline-flex; padding: 3px 10px; border-radius: 12px;
+  font-size: 0.78rem; font-weight: 700; font-family: var(--font-mono);
+}
+
+@media (max-width: 900px) {
+  .slide { padding: 20px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .split, .split-3 { grid-template-columns: 1fr; gap: 20px; }
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+<!-- ============================================================
+     SLIDE 1: TITLE
+     ============================================================ -->
+<div class="slide active" id="slide-0">
+  <div class="bg-glow" style="top:-80px;left:-80px;background:var(--accent-red);"></div>
+  <div class="bg-glow" style="bottom:-80px;right:-80px;background:var(--accent-orange);"></div>
+  <div class="bg-glow-sm" style="top:35%;left:65%;background:var(--accent-blue);"></div>
+  <div class="slide-content">
+    <div class="anim-1">
+      <span style="font-size:5rem;display:inline-block;filter:drop-shadow(0 0 20px rgba(255,77,109,0.4));" class="float">🛡️</span>
+    </div>
+    <div class="anim-2" style="margin-bottom:6px;">
+      <span class="phase-badge" style="color:var(--accent-red);border-color:rgba(255,77,109,0.3);background:rgba(255,77,109,0.08);">End-to-End ML Pipeline · Day 12</span>
+    </div>
+    <h1 class="anim-3" style="margin-bottom:14px;">
+      Credit Card <span class="gradient-text">Fraud Detection</span><br>
+      <span style="font-size:0.6em;font-weight:600;letter-spacing:-0.5px;color:var(--text-secondary);">End-to-End Classifiers & Hyperparameter Tuning</span>
+    </h1>
+    <div class="divider anim-4"></div>
+    <p class="anim-4" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:26px;max-width:720px;margin-left:auto;margin-right:auto;">
+      Exploring structural anomalies, handling extreme imbalance, and building optimized models using KNN & XGBoost.
+    </p>
+    <p class="anim-6 dim" style="font-size:0.9rem;">Created by <strong style="color:var(--text-primary);">Jayan Gupta</strong></p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 2: Q1 & Q2 - STRUCTURAL OVERVIEW
+     ============================================================ -->
+<div class="slide" id="slide-1">
+  <div class="slide-content left">
+    <span class="phase-badge anim-1" style="color:var(--accent-blue);border-color:rgba(67,97,238,0.3);background:rgba(67,97,238,0.08);">Q1 & Q2 — Data Audit</span>
+    <h2 class="anim-2" style="margin-bottom:12px;">Loading & <span class="gradient-text-blue">Data Type Check</span></h2>
+    <p class="anim-3" style="font-size:1rem;color:var(--text-secondary);margin-bottom:16px;">
+      We load the dataset using Pandas. The structural overview confirms there are <strong>zero missing values</strong> in our dataset of 284,807 transactions.
+    </p>
+    <div class="grid-2 anim-4" style="align-items: start;">
+      <div class="code-block" style="font-size:0.8rem; margin:0;">
+        <span class="code-inner">
+<span class="kw">import</span> pandas <span class="kw">as</span> pd
+
+<span class="var">df</span> = pd.<span class="fn">read_csv</span>(<span class="str">'creditcard.csv'</span>)
+<span class="var">df</span>.<span class="fn">info</span>()
+
+<span class="fn">print</span>(<span class="str">"Missing values:"</span>, <span class="var">df</span>.<span class="fn">isnull</span>().<span class="fn">sum</span>().<span class="fn">sum</span>())
+        </span>
+      </div>
+      <div>
+        <div class="card blue-border" style="margin:0;">
+          <h3 class="blue">Structural Properties</h3>
+          <ul style="font-size:0.9rem; margin-top:8px;">
+            <li><strong>Shape:</strong> 284,807 rows × 31 columns</li>
+            <li><strong>PCA Components:</strong> V1 through V28 (preprocessed for privacy)</li>
+            <li><strong>Metadata:</strong> <code>Time</code> (seconds elapsed) and <code>Amount</code> (transaction value)</li>
+            <li><strong>Target:</strong> <code>Class</code> (0 = legitimate, 1 = fraudulent)</li>
+            <li><strong>Quality Check:</strong> Clean dataset, 0 missing cells</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 3: Q3 - TARGET DISTRIBUTION & IMBALANCE
+     ============================================================ -->
+<div class="slide" id="slide-2">
+  <div class="bg-glow" style="top:25%;right:5%;background:var(--accent-red);"></div>
+  <div class="split">
+    <div>
+      <span class="phase-badge anim-1" style="color:var(--accent-red);border-color:rgba(255,77,109,0.3);background:rgba(255,77,109,0.08);">Q3 — Target Variable</span>
+      <h2 class="anim-2" style="margin-bottom:14px;">The Extreme <span class="gradient-text">Class Imbalance</span></h2>
+      <p class="anim-3" style="margin-bottom:12px;">Only <strong>0.17%</strong> of the transactions are fraudulent, creating an extreme 578:1 ratio of legitimate to fraud cases.</p>
+      <div class="callout red anim-4">
+        <p style="font-size:0.95rem;"><strong>Accuracy Trap:</strong> A simple model saying "all transactions are legit" would achieve <strong>99.83% accuracy</strong> but catch zero fraud. We must prioritize <strong>Recall</strong>.</p>
+      </div>
+    </div>
+    <div class="anim-3">
+      <div style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:18px;padding:20px 24px;">
+        <p style="font-size:0.82rem;color:var(--text-dim);margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase;">Class Distribution Counts</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="text-align:center;padding:12px;background:rgba(67,97,238,0.08);border-radius:10px;border:1px solid rgba(67,97,238,0.2);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--accent-blue);">284,315</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);">Legitimate Transactions (99.83%)</div>
+          </div>
+          <div style="text-align:center;padding:12px;background:rgba(255,77,109,0.08);border-radius:10px;border:1px solid rgba(255,77,109,0.2);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--accent-red);">492</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);">Fraudulent Transactions (0.17%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 4: Q4 & Q5 - TRANSACTION AMOUNTS & TIME PATTERNS
+     ============================================================ -->
+<div class="slide" id="slide-3">
+  <div class="slide-content left">
+    <span class="phase-badge anim-1" style="color:var(--accent-orange);border-color:rgba(255,140,66,0.3);background:rgba(255,140,66,0.08);">Q4 & Q5 — Exploratory Analysis</span>
+    <h2 class="anim-2" style="margin-bottom:14px;">Amounts & <span class="gradient-text">Time Signatures</span></h2>
+    <div class="grid-2 anim-3" style="gap:20px;">
+      <div class="card orange-border">
+        <h3 class="orange" style="margin-bottom:8px;">Transaction Amounts</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);">Legitimate transactions are generally low, with occasional massive purchases. Fraudulent transactions have a higher average amount.</p>
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <div style="flex:1;text-align:center;padding:8px;background:rgba(255,255,255,0.04);border-radius:8px;">
+            <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">$88.29</div>
+            <div style="font-size:0.7rem;color:var(--text-dim);">Legit Mean</div>
+          </div>
+          <div style="flex:1;text-align:center;padding:8px;background:rgba(255,77,109,0.06);border-radius:8px;">
+            <div style="font-size:1.1rem;font-weight:700;color:var(--accent-red);">$122.21</div>
+            <div style="font-size:0.7rem;color:var(--text-dim);">Fraud Mean</div>
+          </div>
+        </div>
+      </div>
+      <div class="card red-border">
+        <h3 class="red" style="margin-bottom:8px;">Time distribution</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);">Fraudulent transactions are more evenly spread out across time, including late night hours (cyclical dips in legitimate transactions).</p>
+        <div class="code-block" style="font-size:0.72rem;margin:6px 0 0;">
+          <span class="code-inner">
+sns.<span class="fn">scatterplot</span>(x=<span class="str">'Time'</span>, y=<span class="str">'Amount'</span>, hue=<span class="str">'Class'</span>, data=df)
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 5: Q6 - FEATURE CORRELATION
+     ============================================================ -->
+<div class="slide" id="slide-4">
+  <div class="bg-glow" style="top:20%;left:20%;background:var(--accent-purple);"></div>
+  <div class="slide-content">
+    <span class="phase-badge anim-1" style="color:var(--accent-purple);border-color:rgba(180,129,247,0.3);background:rgba(180,129,247,0.08);">Q6 — Correlations</span>
+    <h2 class="anim-2" style="margin-bottom:12px;">Pearson <span class="gradient-text-purple">Correlation Matrix</span></h2>
+    <p class="anim-3" style="font-size:1rem;margin-bottom:20px;">By design, PCA components V1–V28 are orthogonal (uncorrelated) to each other, but some exhibit strong relationships with the target Class.</p>
+    <div class="grid-2 anim-4" style="max-width:950px;margin:0 auto;gap:24px;text-align:left;align-items:center;">
+      <div class="card purple-border" style="margin:0;">
+        <h3 class="purple" style="margin-bottom:10px;">Top Correlated Features</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;"><span>V17 (Negative Correlation)</span><span class="red">-0.326</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;"><span>V14 (Negative Correlation)</span><span class="red">-0.302</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;"><span>V12 (Negative Correlation)</span><span class="red">-0.260</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;"><span>V4 (Positive Correlation)</span><span class="green">+0.133</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;"><span>V11 (Positive Correlation)</span><span class="green">+0.154</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="callout purple" style="margin:0;">
+          <p style="font-size:0.95rem;"><strong>Insight:</strong> Tree models like XGBoost easily split on these strong correlated PCA components to isolate fraudulent patterns from legitimate behavior.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 6: Q7 & Q8 - SPLITTING AND SCALING
+     ============================================================ -->
+<div class="slide" id="slide-5">
+  <div class="slide-content left">
+    <span class="phase-badge anim-1" style="color:var(--accent-green);border-color:rgba(6,214,160,0.3);background:rgba(6,214,160,0.08);">Q7 & Q8 — Preprocessing</span>
+    <h2 class="anim-2" style="margin-bottom:16px;">Splitting & <span class="gradient-text-green">Feature Scaling</span></h2>
+    <div class="split anim-3" style="gap:28px;align-items:start;">
+      <div>
+        <div class="card green-border">
+          <h3 class="green" style="margin-bottom:8px;">Stratified 80/20 Train/Test Split</h3>
+          <p style="font-size:0.9rem;">Using <code>stratify=y</code> ensures both training and test sets maintain the 0.17% class proportion.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;">
+            <div style="text-align:center;padding:6px 10px;background:rgba(6,214,160,0.06);border-radius:10px;flex:1;">
+              <div style="font-size:1.1rem;font-weight:700;color:var(--accent-green);">227,845</div>
+              <div style="font-size:0.7rem;color:var(--text-dim);">Train size</div>
+            </div>
+            <div style="text-align:center;padding:6px 10px;background:rgba(6,214,160,0.06);border-radius:10px;flex:1;">
+              <div style="font-size:1.1rem;font-weight:700;color:var(--accent-green);">56,962</div>
+              <div style="font-size:0.7rem;color:var(--text-dim);">Test size</div>
+            </div>
+          </div>
+        </div>
+        <div class="card blue-border" style="margin-top:14px;">
+          <h3 class="blue" style="margin-bottom:8px;">Standardization</h3>
+          <p style="font-size:0.9rem;">Scale features to mean=0, variance=1. This ensures distance calculation models (like KNN) are not dominated by the scale of <code>Amount</code>.</p>
+        </div>
+      </div>
+      <div>
+        <div class="code-block" style="font-size:0.8rem;margin:0;">
+          <span class="code-inner">
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> train_test_split
+<span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> StandardScaler
+
+<span class="var">X</span> = df.<span class="fn">drop</span>(columns=[<span class="str">'Class'</span>])
+<span class="var">y</span> = df[<span class="str">'Class'</span>]
+
+<span class="var">X_train</span>, <span class="var">X_test</span>, <span class="var">y_train</span>, <span class="var">y_test</span> = <span class="fn">train_test_split</span>(
+    <span class="var">X</span>, <span class="var">y</span>, <span class="var">test_size</span>=<span class="num">0.2</span>, <span class="var">random_state</span>=<span class="num">42</span>, <span class="var">stratify</span>=<span class="var">y</span>
+)
+
+<span class="var">scaler</span> = <span class="cls">StandardScaler</span>()
+<span class="var">X_train_scaled</span> = <span class="var">scaler</span>.<span class="fn">fit_transform</span>(<span class="var">X_train</span>)
+<span class="var">X_test_scaled</span> = <span class="var">scaler</span>.<span class="fn">transform</span>(<span class="var">X_test</span>)
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 7: Q9 & Q10 - KNN TRAINING & EVALUATION
+     ============================================================ -->
+<div class="slide" id="slide-6">
+  <div class="bg-glow" style="top:15%;left:65%;background:var(--accent-blue);"></div>
+  <div class="split-3">
+    <div>
+      <span class="phase-badge anim-1" style="color:var(--accent-blue);border-color:rgba(67,97,238,0.3);background:rgba(67,97,238,0.08);">Q9 & Q10 — KNN model</span>
+      <h2 class="anim-2" style="margin-bottom:14px;"><span class="gradient-text-blue">K-Nearest Neighbors</span></h2>
+      <p class="anim-3" style="margin-bottom:12px;">KNN is instance-based. To avoid long inference delays, we train KNN on a stratified 10% sample of scaled features.</p>
+      <div class="code-block anim-3" style="font-size:0.78rem;">
+        <span class="code-inner">
+<span class="kw">from</span> sklearn.neighbors <span class="kw">import</span> <span class="cls">KNeighborsClassifier</span>
+
+<span class="cm"># KNN classifier with distance weights</span>
+<span class="var">knn</span> = <span class="cls">KNeighborsClassifier</span>(
+    <span class="var">n_neighbors</span>=<span class="num">5</span>, 
+    <span class="var">weights</span>=<span class="str">'distance'</span>, 
+    <span class="var">n_jobs</span>=<span class="op">-</span><span class="num">1</span>
+)
+<span class="var">knn</span>.<span class="fn">fit</span>(<span class="var">X_train_sample</span>, <span class="var">y_train_sample</span>)
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="card blue-border anim-2">
+        <h3 class="blue">KNN Evaluation Metrics</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Accuracy</span><span class="green">99.95%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Precision</span><span class="green">92.05%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Recall (TPR)</span><span class="orange">82.65%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>F1-Score</span><span class="green">87.10%</span></div>
+        </div>
+      </div>
+      <div class="callout blue anim-3">
+        <p style="font-size:0.9rem;"><strong>Confusion Matrix:</strong> KNN correctly flags 81 fraud cases while missing 17 (False Negatives), resulting in 7 False Positives.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 8: Q11 & Q12 - XGBOOST TRAINING & EVALUATION
+     ============================================================ -->
+<div class="slide" id="slide-7">
+  <div class="bg-glow" style="top:20%;left:10%;background:var(--accent-orange);"></div>
+  <div class="split-3">
+    <div>
+      <span class="phase-badge anim-1" style="color:var(--accent-orange);border-color:rgba(255,140,66,0.3);background:rgba(255,140,66,0.08);">Q11 & Q12 — XGBoost model</span>
+      <h2 class="anim-2" style="margin-bottom:14px;"><span class="gradient-text">XGBoost Classifier</span></h2>
+      <p class="anim-3" style="margin-bottom:12px;">By setting <code>scale_pos_weight</code> to the imbalance ratio (~578), we penalize fraud misses much more heavily.</p>
+      <div class="code-block anim-3" style="font-size:0.78rem;">
+        <span class="code-inner">
+<span class="kw">from</span> xgboost <span class="kw">import</span> <span class="cls">XGBClassifier</span>
+
+<span class="var">ratio</span> = (y_train == <span class="num">0</span>).<span class="fn">sum</span>() / (y_train == <span class="num">1</span>).<span class="fn">sum</span>()
+
+<span class="var">xgb</span> = <span class="cls">XGBClassifier</span>(
+    <span class="var">scale_pos_weight</span>=<span class="var">ratio</span>, 
+    <span class="var">random_state</span>=<span class="num">42</span>, 
+    <span class="var">eval_metric</span>=<span class="str">'logloss'</span>, 
+    <span class="var">n_jobs</span>=<span class="op">-</span><span class="num">1</span>
+)
+<span class="var">xgb</span>.<span class="fn">fit</span>(<span class="var">X_train_scaled</span>, <span class="var">y_train</span>)
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="card orange-border anim-2">
+        <h3 class="orange">XGBoost Evaluation Metrics</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;">
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Accuracy</span><span class="green">99.96%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Precision</span><span class="green">90.32%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>Recall (TPR)</span><span class="green">85.71%</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:0.9rem;"><span>F1-Score</span><span class="green">87.96%</span></div>
+        </div>
+      </div>
+      <div class="callout orange anim-3">
+        <p style="font-size:0.9rem;"><strong>Gain:</strong> XGBoost flags 84 out of 98 fraud cases, reducing missed frauds compared to the baseline KNN model.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 9: Q13 - GRIDSEARCHCV
+     ============================================================ -->
+<div class="slide" id="slide-8">
+  <div class="bg-glow" style="bottom:0;left:20%;background:var(--accent-blue);"></div>
+  <div class="split-3">
+    <div>
+      <span class="phase-badge anim-1" style="color:var(--accent-blue);border-color:rgba(67,97,238,0.3);background:rgba(67,97,238,0.08);">Q13 — Grid Tuning</span>
+      <h2 class="anim-2" style="margin-bottom:14px;"><span class="gradient-text-blue">GridSearchCV</span></h2>
+      <p class="anim-3" style="margin-bottom:12px;">Exhaustively evaluates parameter combinations. Using a stratified subset helps speed up execution.</p>
+      <div class="code-block anim-3" style="font-size:0.78rem;">
+        <span class="code-inner">
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">GridSearchCV</span>
+
+<span class="var">param_grid</span> = {
+    <span class="str">'max_depth'</span>: [<span class="num">3</span>, <span class="num">5</span>],
+    <span class="str">'learning_rate'</span>: [<span class="num">0.1</span>, <span class="num">0.2</span>]
+}
+
+<span class="var">grid</span> = <span class="cls">GridSearchCV</span>(
+    <span class="var">estimator</span>=<span class="cls">XGBClassifier</span>(<span class="var">eval_metric</span>=<span class="str">'logloss'</span>),
+    <span class="var">param_grid</span>=<span class="var">param_grid</span>,
+    <span class="var">scoring</span>=<span class="str">'recall'</span>,
+    <span class="var">cv</span>=<span class="num">3</span>
+)
+<span class="var">grid</span>.<span class="fn">fit</span>(<span class="var">X_train_sample</span>, <span class="var">y_train_sample</span>)
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="card blue-border anim-2" style="margin:0;">
+        <h3 class="blue">GridSearch Tuning Results</h3>
+        <p style="font-size:0.9rem; margin-top:8px;">Exhaustively training over combinations returns optimal parameters targeting Recall:</p>
+        <div style="margin-top:12px;padding:10px;background:rgba(67,97,238,0.06);border-radius:10px;">
+          <div style="font-size:0.82rem;font-family:var(--font-mono);color:var(--accent-blue);">
+            Best Parameters: {'learning_rate': 0.1, 'max_depth': 5}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 10: Q14 - RANDOMIZEDSEARCHCV
+     ============================================================ -->
+<div class="slide" id="slide-9">
+  <div class="bg-glow" style="top:10%;right:10%;background:var(--accent-purple);"></div>
+  <div class="split-3">
+    <div>
+      <span class="phase-badge anim-1" style="color:var(--accent-purple);border-color:rgba(180,129,247,0.3);background:rgba(180,129,247,0.08);">Q14 — Random Tuning</span>
+      <h2 class="anim-2" style="margin-bottom:14px;"><span class="gradient-text-purple">RandomizedSearchCV</span></h2>
+      <p class="anim-3" style="margin-bottom:12px;">Samples fixed number of random parameter combinations. Faster to run on large parameter distributions.</p>
+      <div class="code-block anim-3" style="font-size:0.78rem;">
+        <span class="code-inner">
+<span class="kw">from</span> sklearn.model_selection <span class="kw">import</span> <span class="cls">RandomizedSearchCV</span>
+
+<span class="var">param_dist</span> = {
+    <span class="str">'max_depth'</span>: [<span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>],
+    <span class="str">'learning_rate'</span>: [<span class="num">0.05</span>, <span class="num">0.1</span>, <span class="num">0.2</span>],
+    <span class="str">'n_estimators'</span>: [<span class="num">50</span>, <span class="num">100</span>]
+}
+
+<span class="var">search</span> = <span class="cls">RandomizedSearchCV</span>(
+    <span class="var">estimator</span>=<span class="cls">XGBClassifier</span>(<span class="var">eval_metric</span>=<span class="str">'logloss'</span>),
+    <span class="var">param_distributions</span>=<span class="var">param_dist</span>,
+    <span class="var">n_iter</span>=<span class="num">5</span>,
+    <span class="var">scoring</span>=<span class="str">'recall'</span>,
+    <span class="var">cv</span>=<span class="num">3</span>,
+    <span class="var">random_state</span>=<span class="num">42</span>
+)
+<span class="var">search</span>.<span class="fn">fit</span>(<span class="var">X_train_sample</span>, <span class="var">y_train_sample</span>)
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="card purple-border anim-2" style="margin:0;">
+        <h3 class="purple">RandomSearch Results</h3>
+        <p style="font-size:0.9rem; margin-top:8px;">Fast, stochastic hyperparameter exploration identifies competitive configurations:</p>
+        <div style="margin-top:12px;padding:10px;background:rgba(180,129,247,0.06);border-radius:10px;">
+          <div style="font-size:0.82rem;font-family:var(--font-mono);color:var(--accent-purple);">
+            Best Parameters: {'n_estimators': 100, 'max_depth': 5, 'learning_rate': 0.2}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 11: Q15 - MODEL COMPARISON
+     ============================================================ -->
+<div class="slide" id="slide-10">
+  <div class="slide-content">
+    <span class="phase-badge anim-1" style="color:var(--accent-green);border-color:rgba(6,214,160,0.3);background:rgba(6,214,160,0.08);">Q15 — Comparison</span>
+    <h2 class="anim-2" style="margin-bottom:18px;">Model <span class="gradient-text-green">Comparison</span></h2>
+    <div class="anim-3" style="max-width:1000px;margin:0 auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+            <th>Precision</th>
+            <th>Recall (Fraud TPR)</th>
+            <th>F1-Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>K-Nearest Neighbors (KNN)</strong></td>
+            <td>99.95%</td>
+            <td>92.05%</td>
+            <td>82.65%</td>
+            <td>87.10%</td>
+          </tr>
+          <tr class="winner-row">
+            <td><strong>XGBoost Classifier ✅</strong></td>
+            <td>99.96%</td>
+            <td>90.32%</td>
+            <td>85.71%</td>
+            <td>87.96%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid-2 anim-4" style="max-width:850px;margin:20px auto 0;gap:20px;text-align:left;">
+      <div class="card green-border" style="margin:0;">
+        <h3 class="green">Why XGBoost Wins</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);margin-top:6px;">
+          XGBoost achieves a higher Recall (85.71% vs 82.65%), meaning it catches more fraud transactions, which is crucial for bank security platforms.
+        </p>
+      </div>
+      <div class="card blue-border" style="margin:0;">
+        <h3 class="blue">Efficiency</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);margin-top:6px;">
+          XGBoost trains on the full dataset rapidly and evaluates query instances in milliseconds, while KNN remains computationally expensive at scale.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 12: TAKEAWAYS
+     ============================================================ -->
+<div class="slide" id="slide-11">
+  <div class="bg-glow" style="bottom:-80px;left:-40px;background:var(--accent-green);"></div>
+  <div class="bg-glow" style="top:-40px;right:-50px;background:var(--accent-purple);"></div>
+  <div class="slide-content">
+    <span class="phase-badge anim-1" style="color:var(--accent-red);border-color:rgba(255,77,109,0.3);background:rgba(255,77,109,0.08);">Key Lessons</span>
+    <h2 class="anim-2" style="margin-bottom:18px;">Pipeline <span class="gradient-text">Takeaways</span></h2>
+    <div style="max-width:850px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:12px;">
+      <div class="step-row anim-3" style="border-left:3px solid var(--accent-red);">
+        <div class="step-icon" style="background:rgba(255,77,109,0.12);color:var(--accent-red);font-size:1.3rem;">1</div>
+        <div>
+          <h3 style="font-size:0.95rem;color:var(--accent-red);margin-bottom:4px;">Accuracy is Misleading</h3>
+          <p style="font-size:0.88rem;">With extreme class imbalance, a model claiming 99.8% accuracy can be useless. Focus on F1-Score and Recall metrics.</p>
+        </div>
+      </div>
+      <div class="step-row anim-4" style="border-left:3px solid var(--accent-blue);">
+        <div class="step-icon" style="background:rgba(67,97,238,0.12);color:var(--accent-blue);font-size:1.3rem;">2</div>
+        <div>
+          <h3 style="font-size:0.95rem;color:var(--accent-blue);margin-bottom:4px;">Scale Features for Distance Metrics</h3>
+          <p style="font-size:0.88rem;">Ensure all columns share similar value ranges. Distance-based algorithms (like KNN) fail when features are on vastly different scales.</p>
+        </div>
+      </div>
+      <div class="step-row anim-5" style="border-left:3px solid var(--accent-green);">
+        <div class="step-icon" style="background:rgba(6,214,160,0.12);color:var(--accent-green);font-size:1.3rem;">3</div>
+        <div>
+          <h3 style="font-size:0.95rem;color:var(--accent-green);margin-bottom:4px;">Imbalance Scaling</h3>
+          <p style="font-size:0.88rem;">Leverage target adjustment properties such as <code>scale_pos_weight</code> in XGBoost to penalize missing rare class labels.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIDE 13: THANK YOU
+     ============================================================ -->
+<div class="slide" id="slide-12">
+  <div class="bg-glow" style="top:-80px;left:-80px;background:var(--accent-red);width:500px;height:500px;"></div>
+  <div class="bg-glow" style="bottom:-80px;right:-80px;background:var(--accent-orange);width:500px;height:500px;"></div>
+  <div class="bg-glow-sm" style="top:35%;right:22%;background:var(--accent-blue);"></div>
+  <div class="slide-content">
+    <div class="anim-1">
+      <span style="font-size:4rem;display:inline-block;filter:drop-shadow(0 0 20px rgba(255,77,109,0.5));" class="float">🏆</span>
+    </div>
+    <h1 class="anim-2 gradient-text" style="font-size:3.2rem;margin:14px 0 8px;">Pipeline Complete!</h1>
+    <div class="divider anim-3"></div>
+    <p class="anim-3" style="font-size:1.15rem;margin-bottom:24px;max-width:700px;margin-left:auto;margin-right:auto;">
+      We built a structured Q&A pipeline detecting credit card frauds with <strong>F1 ~88%</strong> and <strong>Recall ~85.7%</strong> using KNN and XGBoost classifiers.
+    </p>
+    <div class="card anim-5" style="display:inline-block;padding:16px 38px;">
+      <p style="font-size:1rem;color:var(--text-primary);">Created by <strong class="gradient-text" style="font-size:1.2rem;">Jayan Gupta</strong></p>
+      <p class="dim" style="font-size:0.82rem;margin-top:6px;">Day 12 Workshop 🎉</p>
+    </div>
+  </div>
+</div>
+
+</div> <!-- /deck -->
+
+<!-- NAVIGATION UI -->
+<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+<div class="slide-counter" id="slideCounter">1 / 13</div>
+<div class="nav-hint">← → arrows &nbsp;|&nbsp; F = fullscreen &nbsp;|&nbsp; Home/End = first/last</div>
+<div class="nav-arrows">
+  <button onclick="navigate(-1)" aria-label="Previous slide">▲</button>
+  <button onclick="navigate(1)" aria-label="Next slide">▼</button>
+</div>
+<div class="slide-dots" id="slideDots"></div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  const dotsContainer = document.getElementById('slideDots');
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  function goTo(index) {
+    if (index < 0 || index >= total) return;
+    slides[current].classList.remove('active');
+    slides[current].classList.add(index > current ? 'prev' : '');
+    const old = current;
+    setTimeout(() => { slides[old].classList.remove('prev'); }, 550);
+    current = index;
+    slides[current].classList.add('active');
+    slides[current].classList.remove('prev');
+
+    document.getElementById('progressBar').style.width = ((current + 1) / total * 100) + '%';
+    document.getElementById('slideCounter').textContent = (current + 1) + ' / ' + total;
+    document.querySelectorAll('.slide-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  }
+
+  window.navigate = function(dir) { goTo(current + dir); };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); navigate(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); navigate(-1); }
+    else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+    else if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  let touchStartX = 0, touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  });
+  document.addEventListener('touchend', function(e) {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+  });
+
+  goTo(0);
+})();
+</script>
+
+</body>
+</html>
