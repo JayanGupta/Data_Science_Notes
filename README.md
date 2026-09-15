@@ -1,10 +1,5 @@
 <div align="center">
 
-<!-- Animated Typing Header -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=900&height=100&lines=%F0%9F%93%8A+Data+Science+Notes;Interactive+Beginner-Friendly+Machine+Learning" alt="Typing SVG" /></a>
-
-<br/>
-
 <!-- Animated Wave Banner -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:00d9ff&height=200&section=header&text=Data%20Science%20Notes&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Interactive%20classroom-quality%20Jupyter%20Notebooks%20for%20Machine%20Learning&descSize=18&descAlignY=55&descColor=58a6ff" width="100%"/>
 
