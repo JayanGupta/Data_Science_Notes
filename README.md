@@ -1,180 +1,172 @@
-<div align="center">
+# Complete Data Science — Project-Based Learning (Sprints 1–4)
 
-<!-- Animated Wave Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:00d9ff&height=200&section=header&text=Data%20Science%20Notes&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Interactive%20classroom-quality%20Jupyter%20Notebooks%20for%20Machine%20Learning&descSize=18&descAlignY=55&descColor=58a6ff" width="100%"/>
-
-<br/>
-
-<!-- Badges Row 1 - Status -->
-![GitHub last commit](https://img.shields.io/github/last-commit/JayanGupta/Data_Science_Notes?style=for-the-badge&color=00d9ff&labelColor=0d1117)
-![GitHub repo size](https://img.shields.io/github/repo-size/JayanGupta/Data_Science_Notes?style=for-the-badge&color=7c3aed&labelColor=0d1117)
-![GitHub stars](https://img.shields.io/github/stars/JayanGupta/Data_Science_Notes?style=for-the-badge&color=fbbf24&labelColor=0d1117)
-![GitHub forks](https://img.shields.io/github/forks/JayanGupta/Data_Science_Notes?style=for-the-badge&color=34d399&labelColor=0d1117)
-
-<br/>
-
-<!-- Badges Row 2 - Tech Stack -->
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=plotly&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-<br/>
-
-<!-- Badges Row 3 - Tools -->
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
-<br/><br/>
-
-<!-- Profile Views Counter -->
-![Profile Views](https://komarev.com/ghpvc/?username=JayanGupta&label=Repository+Views&color=00d9ff&style=for-the-badge)
-
-</div>
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Desktop-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Curriculum Status](https://img.shields.io/badge/Curriculum-Sprints_1--4_Verified-2EA44F?style=for-the-badge)](Complete%20Data%20Science%20-%20Project%20Based%20Learning.md)
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Executive Summary
 
-## 🧠 About This Repository
+This repository delivers an enterprise-grade, project-based data science curriculum covering **Sprints 1 through 4**, strictly aligned with the official specification in [Complete Data Science - Project Based Learning.md](Complete%20Data%20Science%20-%20Project%20Based%20Learning.md).
 
-> *A structured, day-by-day learning journey through Data Science & Machine Learning — complete with interactive teaching notebooks, literal/clear datasets, visual benchmarks, and detailed descriptions.*
-
-This repository acts as an **interactive classroom resource** for anyone starting out in Machine Learning. Instead of complicated code abstractions, pipelines, and mathematical jargon, the resources are designed to highlight **simplicity, learning, and visual interpretation**.
-
-### 🌟 Core Notebook Highlights
-* **Standard scikit-learn Datasets**: Every notebook is migrated to use standard, community-recognized datasets (`load_diabetes`, `load_breast_cancer`, `load_iris`, and `load_wine`) loaded programmatically.
-* **16-Step ML Lifecycle**: Every notebook guides you systematically from introductions, Exploratory Data Analysis (EDA), cleaning, and splitting, to training, evaluations, performance plotting, and interpretation.
-* **Explanation Pointers**: Theoretical concepts, models, and metric meanings are broken down using simple bulleted pointers.
-* **Observations**: Every single execution step ends with a clear explanation answering: *"What Did We Observe?"* and *"What Did We Learn?"*.
+Designed specifically for live classroom coding and structured technical instruction, every project follows a pedagogical **Question & Answer (Q&A) format** using **small, single-purpose code cells**, bulleted concept pointers, architectural diagrams, and pre-executed verification outputs.
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Curriculum Pipeline Architecture
 
-## 🗂️ Repository Structure
-
-```
-📦 Data_Science_Notes
-│
-├── 📂 models/                             # Interactive Teaching Notebooks
-│   ├── 📈 Linear_Regression.ipynb
-│   ├── 🎯 Logistic_Regression.ipynb
-│   ├── 🌲 Decision_Tree.ipynb
-│   ├── 👥 KNN.ipynb
-│   ├── ⚡ SVM.ipynb
-│   ├── ✉️ Naive_Bayes.ipynb
-│   ├── 🌳 Random_Forest.ipynb
-│   ├── 🚀 AdaBoost.ipynb
-│   ├── 🔥 XGBoost.ipynb
-│   ├── 🧬 K_Means.ipynb
-│   └── 📉 PCA.ipynb
-│
-├── 📂 datasets/                           # Accompanying CSV Datasets
-│   ├── 📊 Salary_Data.csv
-│   ├── 📊 Titanic-Dataset.csv
-│   ├── 📊 Telco-Customer-Churn.csv
-│   └── ....
-│
-└── 📄 README.md
+```text
++-----------------------------------------------------------------------------+
+|             Sprint 1: Automated Pipeline & Forensic Log Analyzer            |
+|               Directory: `Sprint1_Log_Analyzer/`                            |
+|  - Directory scanning, extension filtering, and skipping junk files         |
+|  - Object-Oriented `DataParser` with targeted `try-except` handling         |
+|  - Aggregating 5xx forensic anomalies per IP address                        |
+|  - Consolidated output `analytics_ready.json` & quarantined corrupt files   |
++--------------------------------------┬--------------------------------------+
+                                       |
+                                       v Hands-off to Commercial Data
++-----------------------------------------------------------------------------+
+|          Sprint 2: Building, Cleaning & Analyzing an E-Commerce Dataset     |
+|               Directory: `Sprint2_Ecommerce_Dataset/`                       |
+|  - Live web scraping with `requests` & `BeautifulSoup` (open sandbox)       |
+|  - Vectorized numeric cleaning and IQR outlier detection (1.5 x IQR)        |
+|  - Inferential statistics: Two-sample Welch's t-test (p < 0.05)             |
+|  - Pearson correlation matrix & 3-panel publication visual (Seaborn)        |
+|  - Exported Foundation: `data/ecommerce_cleaned.csv`                        |
++--------------------------------------┬--------------------------------------+
+                                       |
+                                       v Ingest into Relational Engine
++-----------------------------------------------------------------------------+
+|               Sprint 3: Analyzing the E-Commerce Dataset in SQL             |
+|               Directory: `Sprint3_SQL_Analysis/`                            |
+|  - 3-table normalized relational schema (`categories`, `products`, `reviews`)|
+|  - Loaded into SQLite via SQLAlchemy                                        |
+|  - Window functions: `RANK() OVER (PARTITION BY ... ORDER BY ...)`          |
+|  - CTEs: Top price premium movers above category average                    |
+|  - In-database cleaning: Deduping reviews with `ROW_NUMBER() OVER`          |
+|  - Date standardization across 4 formats to ISO `YYYY-MM-DD`                |
++--------------------------------------┬--------------------------------------+
+                                       |
+                                       v Connect to Business Intelligence Layer
++-----------------------------------------------------------------------------+
+|          Sprint 4: Dashboarding the E-Commerce Dataset in Power BI          |
+|               Directory: `Sprint4_PowerBI_Dashboard/`                       |
+|  - Native Power BI solution file: `Sprint4_Ecommerce_Dashboard.pbix`        |
+|  - Executive KPI cards: Total Products, Catalog Avg Price, Weighted Rating  |
+|  - Comparative visual analytics: Category benchmarks & Satisfaction matrix  |
+|  - Enterprise DAX measures: `CALCULATE`, `ALLEXCEPT`, and Dynamic Slicers   |
+|  - Interactive Python & Plotly prototype in `Sprint4_Solution.ipynb`        |
+|  - Standalone browser preview in `dashboard_design_preview.html`             |
++-----------------------------------------------------------------------------+
 ```
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Curriculum Matrix
 
-## 📚 Machine Learning Notebook Suite
-
-| Notebook | Algorithm Type | Problem Description | Key Visualizations |
-| :--- | :--- | :--- | :--- |
-| [Linear Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Linear_Regression.ipynb) | Supervised Regression | Predict diabetes progression using clinical body metrics (`load_diabetes`). | Actual vs. Predicted Scatter, Residual Plot |
-| [Logistic Regression](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Logistic_Regression.ipynb) | Supervised Classification | Predict if a tumor diagnosis is benign or malignant (`load_breast_cancer`). | Confusion Matrix Heatmap, 1D Sigmoid Curve |
-| [Decision Tree](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Decision_Tree.ipynb) | Supervised Classification | Predict Iris flower species using tree splitting (`load_iris`). | Flowchart Tree Structure, Feature Importance |
-| [KNN](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/KNN.ipynb) | Supervised Classification | Classify Iris flower species from petal measurements (`load_iris`). | 2D Decision Boundary Contour, Confusion Heatmap |
-| [SVM](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/SVM.ipynb) | Supervised Classification | Classify Iris flower species using support vector boundaries (`load_iris`). | Decision Boundary Contour, Support Vector Highlights |
-| [Naive Bayes](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Naive_Bayes.ipynb) | Supervised Classification | Predict Iris flower species using probability likelihoods (`load_iris`). | Probability Density Curve, Confusion Heatmap |
-| [Random Forest](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/Random_Forest.ipynb) | Supervised Classification | Predict Iris flower species using bagging ensembles (`load_iris`). | Feature Importance, Single Estimator Tree |
-| [AdaBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/AdaBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using boosting ensembles (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
-| [XGBoost](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/XGBoost.ipynb) | Supervised Classification | Predict breast cancer tumor type using gradient boosting (`load_breast_cancer`). | Feature Importance, Confusion Matrix Heatmap |
-| [K-Means](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/K_Means.ipynb) | Unsupervised Clustering | Cluster unlabeled Iris flower samples into 3 segments (`load_iris`). | Segment Scatter with Centroids, Elbow Curve |
-| [PCA](file:///c:/Users/GFG/Desktop/GeeksforGeeks/Data%20Science%20Notes/models/PCA.ipynb) | Unsupervised Dimensionality | Compress 30 breast cancer dimensions to 2 principal components (`load_breast_cancer`). | Scree Plot (Explained Variance), 2D PC Scatter |
+| Sprint | Project Title | Core Technologies | Focus Scenario | Primary Solution Artifacts | Output Artifacts |
+|---|---|---|---|---|---|
+| **Sprint 1** | Automated Pipeline & Forensic Log Analyzer | Python, OOP, `os`, `json`, `shutil` | Ingesting messy telemetry logs and quarantining corrupted files | [`Sprint1_Solution.ipynb`](Sprint1_Log_Analyzer/Sprint1_Solution.ipynb) | `analytics_ready.json`, `data/quarantine/` |
+| **Sprint 2** | E-Commerce Scraping, Cleaning & EDA | `BeautifulSoup`, `requests`, `NumPy`, `Pandas`, `SciPy`, `Seaborn` | Scraping web listings, IQR outlier detection, Welch's t-test | [`Sprint2_Solution.ipynb`](Sprint2_Ecommerce_Dataset/Sprint2_Solution.ipynb) | `data/ecommerce_cleaned.csv`, `eda_summary.png` |
+| **Sprint 3** | E-Commerce Relational SQL Analysis | SQL, SQLite, SQLAlchemy, Window Functions, CTEs | Normalizing schema, window ranking, deduplicating reviews | [`Sprint3_Solution.ipynb`](Sprint3_SQL_Analysis/Sprint3_Solution.ipynb) | `ecommerce.db` (3 normalized tables) |
+| **Sprint 4** | E-Commerce Executive Dashboard | Power BI Desktop, DAX, Plotly, HTML5 | Category Manager dashboard, KPI cards, DAX filter context | [`Sprint4_Ecommerce_Dashboard.pbix`](Sprint4_PowerBI_Dashboard/Sprint4_Ecommerce_Dashboard.pbix), [`Sprint4_Solution.ipynb`](Sprint4_PowerBI_Dashboard/Sprint4_Solution.ipynb) | Native `.pbix` model, Plotly charts, HTML mockup |
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Pedagogical Structure & Teaching Standards
 
-## 🗺️ Learning Roadmap
+1. **Question & Answer (Q&A) Format:**
+   - Every topic is introduced with a concrete business or technical question (e.g., *How do we detect price outliers using the 1.5 x IQR rule?*).
+   - Concept pointers summarize the statistical or algorithmic theory in clear bullet points before code is executed.
+   - Code cells are kept small (3 to 8 lines) so instructors can narrate each step while typing live.
+   - Key takeaways and data assertions summarize the outcome immediately after each step.
 
-```mermaid
-graph TD
-    A[📈 Regression] --> A1[Linear Regression]
-    
-    B[🎯 Classification] --> B1[Logistic Regression]
-    B --> B2[Decision Tree]
-    B --> B3[KNN]
-    B --> B4[SVM]
-    B --> B5[Naive Bayes]
-    
-    C[🌲 Ensembles] --> C1[Random Forest]
-    C --> C2[AdaBoost]
-    C --> C3[XGBoost]
-    
-    D[🧬 Unsupervised] --> D1[K-Means Clustering]
-    D --> D2[PCA Dimension Reduction]
+2. **Zero-Crash Defensive Architecture:**
+   - Exception handling is targeted (`JSONDecodeError`, `KeyError`, `ValueError`) rather than using bare `except:`.
+   - Data corruption is audited and preserved in quarantine directories rather than silently dropped.
 
-    style A fill:#0d1117,stroke:#00d9ff,color:#ffffff
-    style B fill:#0d1117,stroke:#7c3aed,color:#ffffff
-    style C fill:#0d1117,stroke:#34d399,color:#ffffff
-    style D fill:#0d1117,stroke:#fbbf24,color:#ffffff
+3. **Continuous Data Thread:**
+   - The four sprints do not exist in isolation: Sprint 2 scrapes and cleans the product catalog; Sprint 3 normalizes it into SQL and cleans customer reviews; Sprint 4 connects Power BI to that exact database to produce executive dashboards.
+
+---
+
+## Centralized Datasets Hub
+
+All raw datasets, starting CSVs, and benchmark files are duplicated in the root [`datasets/`](datasets/README.md) directory. This ensures instructors and students can start fresh or restore individual sprint folders at any time without re-downloading external resources.
+
+```text
+datasets/
+├── README.md                          # Data dictionary and quick copy commands
+├── Sprint_1_Log_Analyzer/             # 75 raw server logs (.txt and .json)
+├── Sprint_2_Ecommerce_Dataset/        # 149 raw scraped e-commerce listings
+├── Sprint_3_SQL_Analysis/             # Clean product CSV and raw reviews CSV
+└── Sprint_4_PowerBI_Dashboard/        # Power BI denormalized CSVs and SQLite database
 ```
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Repository Layout
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/JayanGupta/Data_Science_Notes/issues).
-
-1. 🍴 Fork the Project
-2. 🌿 Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit your Changes (`git commit -m 'Add AmazingFeature'`)
-4. 📤 Push to the Branch (`git push origin feature/AmazingFeature`)
-5. 🔃 Open a Pull Request
+```text
+Data_Science_Notes/
+├── Complete Data Science - Project Based Learning.md  # Official curriculum syllabus
+├── README.md                                          # Master repository documentation
+│
+├── datasets/                                          # Centralized data repository
+│   ├── README.md                                      # Data dictionary & restore guide
+│   ├── Sprint_1_Log_Analyzer/                         # Raw server logs
+│   ├── Sprint_2_Ecommerce_Dataset/                    # Raw scraped listings
+│   ├── Sprint_3_SQL_Analysis/                         # Relational inputs
+│   └── Sprint_4_PowerBI_Dashboard/                    # BI reporting tables
+│
+├── Sprint1_Log_Analyzer/                              # SPRINT 1 FOLDER
+│   ├── README.md                                      # Sprint documentation & data guide
+│   ├── Sprint1_Solution.ipynb                         # Pre-executed Q&A solution notebook
+│   ├── analytics_ready.json                           # Pipeline output (65 clean records)
+│   └── data/                                          # Local working data directory
+│
+├── Sprint2_Ecommerce_Dataset/                         # SPRINT 2 FOLDER
+│   ├── README.md                                      # Sprint documentation & data guide
+│   ├── Sprint2_Solution.ipynb                         # Pre-executed Q&A solution notebook
+│   ├── eda_summary.png                                # 3-panel publication visual
+│   └── data/                                          # Local working data directory
+│
+├── Sprint3_SQL_Analysis/                              # SPRINT 3 FOLDER
+│   ├── README.md                                      # Sprint documentation & data guide
+│   ├── Sprint3_Solution.ipynb                         # Pre-executed Q&A solution notebook
+│   ├── ecommerce.db                                   # SQLite relational database
+│   └── data/                                          # Local working data directory
+│
+└── Sprint4_PowerBI_Dashboard/                         # SPRINT 4 FOLDER
+    ├── README.md                                      # Sprint documentation & data guide
+    ├── Sprint4_Ecommerce_Dashboard.pbix               # Native Power BI Desktop solution file
+    ├── Sprint4_Solution.ipynb                         # Pre-executed Plotly prototype notebook
+    ├── DAX_Measures_Reference.md                      # DAX formulas reference
+    ├── dashboard_design_preview.html                  # Standalone interactive browser preview
+    └── data/                                          # Local working data directory
+```
 
 ---
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+## Environment Setup & Quick Start
 
-## ⭐ Show Your Support
+### 1. Prerequisites
+- Python 3.10+ (Tested on Python 3.12 and 3.14)
+- Jupyter Notebook / JupyterLab
+- Microsoft Power BI Desktop (Optional, for native `.pbix` viewing)
 
-Give a ⭐ if this project helped you! It motivates to keep adding more content.
+### 2. Dependency Installation
+```bash
+pip install pandas numpy scipy matplotlib seaborn requests beautifulsoup4 sqlalchemy plotly
+```
 
-<div align="center">
-
-[![Star History Chart](https://api.star-history.com/svg?repos=JayanGupta/Data_Science_Notes&type=Date&theme=dark)](https://star-history.com/#JayanGupta/Data_Science_Notes&Date)
-
-</div>
-
----
-
-<div align="center">
-
-<!-- Animated Footer Wave -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1a1b27,100:00d9ff&height=120&section=footer" width="100%"/>
-
-<br/>
-
-<b>Made with ❤️ by <a href="https://github.com/JayanGupta">Jayan Gupta</a></b>
-
-<br/><br/>
-
-<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
-<img src="https://forthebadge.com/images/badges/made-with-python.svg" />
-<img src="https://forthebadge.com/images/badges/open-source.svg" />
-
-</div>
+### 3. Verification Command
+To verify that all 4 sprint solution notebooks execute without errors:
+```powershell
+python -c "import json; [print(f'[OK] {s}: Clean execution') for s, p in [('Sprint 1', 'Sprint1_Log_Analyzer/Sprint1_Solution.ipynb'), ('Sprint 2', 'Sprint2_Ecommerce_Dataset/Sprint2_Solution.ipynb'), ('Sprint 3', 'Sprint3_SQL_Analysis/Sprint3_Solution.ipynb'), ('Sprint 4', 'Sprint4_PowerBI_Dashboard/Sprint4_Solution.ipynb')] if not any(o.get('output_type') == 'error' for c in json.load(open(p, encoding='utf-8'))['cells'] for o in c.get('outputs', []))]"
+```

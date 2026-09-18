@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-03-01T21:49:00",
+  "ip_address": "203.0.113.55",
+  "status_code": 200,
+  "endpoint": "/api/users",
+  "response_time_ms": 262
+}

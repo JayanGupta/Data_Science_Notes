@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Design Preview — Sprint 4</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card-bg: #ffffff; --text: #1f2430; --muted: #6b7280;
+    --accent: #2e7d5b; --accent-light: #d9efe4; --border: #e3e5e9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 32px;
+  }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .banner {
+    background: #fff8e1; border: 1px solid #f0dca0; color: #7a5c00;
+    padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 24px;
+  }
+  .kpi-row { display: flex; gap: 16px; margin-bottom: 20px; }
+  .kpi-card {
+    flex: 1; background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+  }
+  .kpi-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .kpi-value { font-size: 28px; font-weight: 700; margin-top: 4px; color: var(--accent); }
+  .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .panel {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+  }
+  .panel h2 { font-size: 14px; margin: 0 0 12px; color: var(--text); }
+  .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .controls label { font-size: 12px; color: var(--muted); }
+  select, input[type=range] { accent-color: var(--accent); }
+  bar { display: block; }
+  .bar-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-size: 12px; }
+  .bar-label { width: 130px; text-align: right; color: var(--muted); flex-shrink: 0; }
+  .bar-track { flex: 1; background: #eef0f2; border-radius: 4px; overflow: hidden; height: 16px; }
+  .bar-fill { background: var(--accent); height: 100%; border-radius: 4px; transition: width .2s; }
+  .bar-value { width: 60px; font-size: 12px; color: var(--text); }
+  svg { display: block; }
+  .dot { fill: var(--accent); fill-opacity: .55; }
+  .dot.dim { fill: #c7cbd1; fill-opacity: .35; }
+  .axis-label { font-size: 10px; fill: var(--muted); }
+  footer { margin-top: 20px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<h1>Electronics / Home-Goods / Sports-Outdoors — Product Dashboard</h1>
+<div class="subtitle">Design preview for the Sprint 4 live class — built from the real Sprint 2/3 dataset</div>
+
+<div class="banner">
+  This is a static HTML preview of the target dashboard layout, not the Power BI file itself
+  (Power BI Desktop can't run in this environment). Use it as a visual reference while building
+  the real .pbix in class — see <code>DAX_Measures_Reference.md</code> for the exact measures
+  and <code>README.md</code> for connection steps.
+</div>
+
+<div class="kpi-row">
+  <div class="kpi-card">
+    <div class="kpi-label">Average Price</div>
+    <div class="kpi-value" id="kpi-price">$0</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Average Rating</div>
+    <div class="kpi-value" id="kpi-rating">0.0</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Total Products</div>
+    <div class="kpi-value" id="kpi-count">0</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="panel">
+    <h2>Average Price by Category (filtered by slicer below)</h2>
+    <div id="bar-chart"></div>
+  </div>
+  <div class="panel">
+    <h2>Price vs. Rating</h2>
+    <svg id="scatter" viewBox="0 0 320 260" width="100%" height="260"></svg>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Price Range Slicer</h2>
+  <div class="controls">
+    <label>Min: $<span id="min-label">0</span></label>
+    <input type="range" id="min-slider" min="0" max="2000" value="0" step="10">
+    <label>Max: $<span id="max-label">2000</span></label>
+    <input type="range" id="max-slider" min="0" max="2000" value="2000" step="10">
+  </div>
+  <div style="font-size:12px;color:var(--muted)">
+    Mirrors the <code>Filtered Avg Price</code> DAX measure — drag either handle and every visual above recalculates live.
+  </div>
+</div>
+
+<footer>Sprint 4 — Complete Data Science: Project Based Learning · Dashboard design preview</footer>
+
+<script>
+const data = [{"product_id": 1, "name": "Maple Row Electric Kettle", "brand": "Maple Row", "category": "home-goods", "price": 23.29, "rating": 3.7, "review_count": 1269.0}, {"product_id": 2, "name": "Lumen Air Purifier", "brand": "Lumen", "category": "home-goods", "price": 186.52, "rating": 2.9, "review_count": 2408.0}, {"product_id": 4, "name": "Maple Row Wall Clock", "brand": "Maple Row", "category": "home-goods", "price": 127.0, "rating": 4.7, "review_count": 859.0}, {"product_id": 5, "name": "Sonyx Mechanical Keyboard", "brand": "Sonyx", "category": "electronics", "price": 358.7, "rating": 3.2, "review_count": 2823.0}, {"product_id": 6, "name": "Vertex Adjustable Dumbbells", "brand": "Vertex", "category": "sports-outdoors", "price": 70.0, "rating": 4.1, "review_count": 743.0}, {"product_id": 7, "name": "Lumen Bath Towel Set", "brand": "Lumen", "category": "home-goods", "price": 140.42, "rating": 3.2, "review_count": 3877.0}, {"product_id": 8, "name": "PeakForm Trekking Poles", "brand": "Peakform", "category": "sports-outdoors", "price": 256.12, "rating": 4.5, "review_count": 833.0}, {"product_id": 9, "name": "Nexlon Smart Watch", "brand": "Nexlon", "category": "electronics", "price": 192.0, "rating": 3.9, "review_count": 4054.0}, {"product_id": 10, "name": "Lumen Storage Ottoman", "brand": "Lumen", "category": "home-goods", "price": 22.26, "rating": 2.8, "review_count": 1618.0}, {"product_id": 11, "name": "Brightek Laptop Stand", "brand": "Brightek", "category": "electronics", "price": 141.52, "rating": 3.8, "review_count": 3823.0}, {"product_id": 12, "name": "Sonyx Portable SSD 1TB", "brand": "Sonyx", "category": "electronics", "price": 28.55, "rating": 3.6, "review_count": 862.0}, {"product_id": 13, "name": "Ironclad Running Shoes", "brand": "Ironclad", "category": "sports-outdoors", "price": 370.76, "rating": 3.0, "review_count": 835.0}, {"product_id": 14, "name": "TrailBlaze Insulated Water Bottle", "brand": "Trailblaze", "category": "sports-outdoors", "price": 196.87, "rating": 4.5, "review_count": 1269.0}, {"product_id": 15, "name": "Vantage Wireless Mouse", "brand": "Vantage", "category": "electronics", "price": 2580.28, "rating": 3.8, "review_count": 1200.0}, {"product_id": 16, "name": "Vertex Fitness Tracker", "brand": "Vertex", "category": "sports-outdoors", "price": 37.64, "rating": 4.4, "review_count": 1362.0}, {"product_id": 17, "name": "Orbis Bluetooth Speaker", "brand": "Orbis", "category": "electronics", "price": 146.0, "rating": 3.6, "review_count": 3679.0}, {"product_id": 18, "name": "Nexlon Mechanical Keyboard", "brand": "Nexlon", "category": "electronics", "price": 441.0, "rating": 4.3, "review_count": 2142.0}, {"product_id": 19, "name": "PeakForm Adjustable Dumbbells", "brand": "Peakform", "category": "sports-outdoors", "price": 214.48, "rating": 3.3, "review_count": 1144.0}, {"product_id": 20, "name": "TrailBlaze Fitness Tracker", "brand": "Trailblaze", "category": "sports-outdoors", "price": 279.46, "rating": 4.2, "review_count": 4083.0}, {"product_id": 21, "name": "Brightek USB-C Hub", "brand": "Brightek", "category": "electronics", "price": 377.87, "rating": 4.4, "review_count": 3756.0}, {"product_id": 22, "name": "Summit Gear Hiking Backpack 40L", "brand": "Summit Gear", "category": "sports-outdoors", "price": 105.0, "rating": 4.8, "review_count": 399.0}, {"product_id": 23, "name": "Cascade Scented Candle Set", "brand": "Cascade", "category": "home-goods", "price": 50.04, "rating": 4.0, "review_count": 3833.0}, {"product_id": 24, "name": "TrailBlaze Camping Tent 2P", "brand": "Trailblaze", "category": "sports-outdoors", "price": 67.83, "rating": 4.9, "review_count": 2855.0}, {"product_id": 25, "name": "Hearth&Co Electric Kettle", "brand": "Hearth&Co", "category": "home-goods", "price": 101.17, "rating": 3.0, "review_count": 744.0}, {"product_id": 27, "name": "Cascade Memory Foam Pillow", "brand": "Cascade", "category": "home-goods", "price": 126.73, "rating": 3.6, "review_count": 1658.0}, {"product_id": 28, "name": "Orbis Noise Cancelling Headphones", "brand": "Orbis", "category": "electronics", "price": NaN, "rating": 3.6, "review_count": 758.0}, {"product_id": 29, "name": "Nexlon Noise Cancelling Headphones", "brand": "Nexlon", "category": "electronics", "price": 77.2, "rating": 4.9, "review_count": 1801.0}, {"product_id": 30, "name": "Summit Gear Trekking Poles", "brand": "Summit Gear", "category": "sports-outdoors", "price": 101.58, "rating": 3.4, "review_count": 2912.0}, {"product_id": 32, "name": "Sonyx Laptop Stand", "brand": "Sonyx", "category": "electronics", "price": 213.77, "rating": 4.9, "review_count": 756.0}, {"product_id": 33, "name": "Norden Ceramic Dinner Set", "brand": "Norden", "category": "home-goods", "price": 125.34, "rating": 2.9, "review_count": 3368.0}, {"product_id": 34, "name": "TrailBlaze Cycling Helmet", "brand": "Trailblaze", "category": "sports-outdoors", "price": 20.61, "rating": 4.2, "review_count": 2776.0}, {"product_id": 35, "name": "Brightek Wireless Mouse", "brand": "Brightek", "category": "electronics", "price": 100.57, "rating": 4.2, "review_count": 18.0}, {"product_id": 36, "name": "Cascade Ceramic Dinner Set", "brand": "Cascade", "category": "home-goods", "price": 143.0, "rating": 4.9, "review_count": 3576.0}, {"product_id": 38, "name": "PeakForm Hiking Backpack 40L", "brand": "Peakform", "category": "sports-outdoors", "price": 202.76, "rating": 4.5, "review_count": 445.0}, {"product_id": 39, "name": "Norden Desk Lamp", "brand": "Norden", "category": "home-goods", "price": 164.0, "rating": 3.2, "review_count": 4032.0}, {"product_id": 40, "name": "Cascade Throw Blanket", "brand": "Cascade", "category": "home-goods", "price": 212.11, "rating": 4.0, "review_count": 3586.0}, {"product_id": 41, "name": "Cascade Stand Mixer", "brand": "Cascade", "category": "home-goods", "price": 72.46, "rating": 4.1, "review_count": 538.0}, {"product_id": 42, "name": "Vantage Portable SSD 1TB", "brand": "Vantage", "category": "electronics", "price": 301.0, "rating": 4.7, "review_count": 3193.0}, {"product_id": 44, "name": "Brightek Bluetooth Speaker", "brand": "Brightek", "category": "electronics", "price": 318.21, "rating": 4.4, "review_count": 2539.0}, {"product_id": 45, "name": "Hearth&Co Ceramic Dinner Set", "brand": "Hearth&Co", "category": "home-goods", "price": 53.65, "rating": 3.9, "review_count": 1805.0}, {"product_id": 46, "name": "Sonyx Smart Watch", "brand": "Sonyx", "category": "electronics", "price": 290.98, "rating": 3.0, "review_count": NaN}, {"product_id": 47, "name": "Vantage Wireless Earbuds", "brand": "Vantage", "category": "electronics", "price": 250.2, "rating": 4.0, "review_count": 1483.0}, {"product_id": 48, "name": "PeakForm Cycling Helmet", "brand": "Peakform", "category": "sports-outdoors", "price": 75.15, "rating": 4.2, "review_count": 171.0}, {"product_id": 49, "name": "Vantage 4K Monitor", "brand": "Vantage", "category": "electronics", "price": 20.25, "rating": 3.2, "review_count": 2312.0}, {"product_id": 50, "name": "Summit Gear Foam Roller", "brand": "Summit Gear", "category": "sports-outdoors", "price": 179.91, "rating": 4.8, "review_count": 567.0}, {"product_id": 51, "name": "TrailBlaze Adjustable Dumbbells", "brand": "Trailblaze", "category": "sports-outdoors", "price": 362.06, "rating": 3.4, "review_count": 834.0}, {"product_id": 55, "name": "PeakForm Resistance Bands Set", "brand": "Peakform", "category": "sports-outdoors", "price": 218.26, "rating": 2.9, "review_count": 919.0}, {"product_id": 56, "name": "Vantage USB-C Hub", "brand": "Vantage", "category": "electronics", "price": 279.72, "rating": 3.1, "review_count": 1162.0}, {"product_id": 57, "name": "Vertex Yoga Mat", "brand": "Vertex", "category": "sports-outdoors", "price": 123.09, "rating": 2.9, "review_count": 3918.0}, {"product_id": 60, "name": "Hearth&Co Air Purifier", "brand": "Hearth&Co", "category": "home-goods", "price": 174.0, "rating": 3.4, "review_count": 2195.0}, {"product_id": 62, "name": "Brightek Mechanical Keyboard", "brand": "Brightek", "category": "electronics", "price": 79.62, "rating": 3.6, "review_count": 2986.0}, {"product_id": 63, "name": "Vantage Mechanical Keyboard", "brand": "Vantage", "category": "electronics", "price": 59.45, "rating": 3.4, "review_count": 1325.0}, {"product_id": 64, "name": "Sonyx USB-C Hub", "brand": "Sonyx", "category": "electronics", "price": 399.2, "rating": 3.2, "review_count": 348.0}, {"product_id": 65, "name": "Hearth&Co Desk Lamp", "brand": "Hearth&Co", "category": "home-goods", "price": 203.65, "rating": 4.4, "review_count": 658.0}, {"product_id": 66, "name": "Maple Row Scented Candle Set", "brand": "Maple Row", "category": "home-goods", "price": 86.09, "rating": 2.8, "review_count": 2395.0}, {"product_id": 67, "name": "Norden Throw Blanket", "brand": "Norden", "category": "home-goods", "price": 10.0, "rating": 5.0, "review_count": 2285.0}, {"product_id": 68, "name": "Vertex Insulated Water Bottle", "brand": "Vertex", "category": "sports-outdoors", "price": 65.78, "rating": 4.3, "review_count": 2651.0}, {"product_id": 69, "name": "Cascade Wall Clock", "brand": "Cascade", "category": "home-goods", "price": 88.0, "rating": 3.7, "review_count": 2281.0}, {"product_id": 72, "name": "Vertex Cycling Helmet", "brand": "Vertex", "category": "sports-outdoors", "price": 231.05, "rating": 3.2, "review_count": 2630.0}, {"product_id": 73, "name": "Lumen Desk Lamp", "brand": "Lumen", "category": "home-goods", "price": 180.21, "rating": 2.9, "review_count": 2940.0}, {"product_id": 75, "name": "Orbis Laptop Stand", "brand": "Orbis", "category": "electronics", "price": NaN, "rating": 4.4, "review_count": 2496.0}, {"product_id": 76, "name": "Ironclad Foam Roller", "brand": "Ironclad", "category": "sports-outdoors", "price": 150.0, "rating": 3.0, "review_count": 3448.0}, {"product_id": 79, "name": "Hearth&Co Memory Foam Pillow", "brand": "Hearth&Co", "category": "home-goods", "price": NaN, "rating": 4.5, "review_count": 3880.0}, {"product_id": 80, "name": "Orbis Power Bank 20000mAh", "brand": "Orbis", "category": "electronics", "price": 136.61, "rating": 3.6, "review_count": 4081.0}, {"product_id": 81, "name": "Sonyx Wireless Earbuds", "brand": "Sonyx", "category": "electronics", "price": 254.71, "rating": 4.0, "review_count": 1831.0}, {"product_id": 84, "name": "Brightek Noise Cancelling Headphones", "brand": "Brightek", "category": "electronics", "price": 74.65, "rating": 3.8, "review_count": 597.0}, {"product_id": 85, "name": "Hearth&Co Throw Blanket", "brand": "Hearth&Co", "category": "home-goods", "price": 57.0, "rating": 4.9, "review_count": NaN}, {"product_id": 86, "name": "Vantage Power Bank 20000mAh", "brand": "Vantage", "category": "electronics", "price": 196.04, "rating": 3.1, "review_count": 2717.0}, {"product_id": 87, "name": "Sonyx 4K Monitor", "brand": "Sonyx", "category": "electronics", "price": 229.76, "rating": 3.4, "review_count": 2031.0}, {"product_id": 88, "name": "Vertex Foam Roller", "brand": "Vertex", "category": "sports-outdoors", "price": 135.54, "rating": 3.8, "review_count": 1508.0}, {"product_id": 91, "name": "Orbis USB-C Hub", "brand": "Orbis", "category": "electronics", "price": 278.67, "rating": 3.4, "review_count": 4165.0}, {"product_id": 94, "name": "Ironclad Adjustable Dumbbells", "brand": "Ironclad", "category": "sports-outdoors", "price": 65.0, "rating": 3.6, "review_count": 701.0}, {"product_id": 96, "name": "Orbis 4K Monitor", "brand": "Orbis", "category": "electronics", "price": 428.35, "rating": 4.4, "review_count": 3743.0}, {"product_id": 97, "name": "Hearth&Co Cast Iron Skillet", "brand": "Hearth&Co", "category": "home-goods", "price": 68.76, "rating": 4.9, "review_count": 1016.0}, {"product_id": 98, "name": "Vantage Laptop Stand", "brand": "Vantage", "category": "electronics", "price": 115.37, "rating": 3.8, "review_count": 3136.0}, {"product_id": 101, "name": "Lumen Cast Iron Skillet", "brand": "Lumen", "category": "home-goods", "price": 88.27, "rating": 3.2, "review_count": 2986.0}, {"product_id": 102, "name": "Vantage Webcam", "brand": "Vantage", "category": "electronics", "price": 191.04, "rating": 2.9, "review_count": 1066.0}, {"product_id": 103, "name": "TrailBlaze Resistance Bands Set", "brand": "Trailblaze", "category": "sports-outdoors", "price": 359.0, "rating": 3.5, "review_count": 3187.0}, {"product_id": 104, "name": "Maple Row Stand Mixer", "brand": "Maple Row", "category": "home-goods", "price": 181.0, "rating": 3.9, "review_count": 74.0}, {"product_id": 105, "name": "Vertex Sleeping Bag", "brand": "Vertex", "category": "sports-outdoors", "price": 22.65, "rating": 4.6, "review_count": 3317.0}, {"product_id": 107, "name": "Summit Gear Sleeping Bag", "brand": "Summit Gear", "category": "sports-outdoors", "price": 294.4, "rating": 3.0, "review_count": 3871.0}, {"product_id": 108, "name": "PeakForm Running Shoes", "brand": "Peakform", "category": "sports-outdoors", "price": 245.33, "rating": 3.3, "review_count": 3184.0}, {"product_id": 110, "name": "Hearth&Co Storage Ottoman", "brand": "Hearth&Co", "category": "home-goods", "price": 145.44, "rating": 3.6, "review_count": 3638.0}, {"product_id": 111, "name": "Cascade Storage Ottoman", "brand": "Cascade", "category": "home-goods", "price": 163.94, "rating": 3.3, "review_count": 2386.0}, {"product_id": 113, "name": "Hearth&Co Stand Mixer", "brand": "Hearth&Co", "category": "home-goods", "price": 65.63, "rating": 3.0, "review_count": 4086.0}, {"product_id": 115, "name": "Maple Row Ceramic Dinner Set", "brand": "Maple Row", "category": "home-goods", "price": 97.12, "rating": 3.4, "review_count": 2134.0}, {"product_id": 116, "name": "Brightek Webcam", "brand": "Brightek", "category": "electronics", "price": 61.23, "rating": 3.8, "review_count": 4058.0}, {"product_id": 120, "name": "Cascade Bath Towel Set", "brand": "Cascade", "category": "home-goods", "price": 132.35, "rating": NaN, "review_count": 3663.0}, {"product_id": 123, "name": "TrailBlaze Yoga Mat", "brand": "Trailblaze", "category": "sports-outdoors", "price": 379.0, "rating": 4.2, "review_count": 1012.0}, {"product_id": 125, "name": "Ironclad Insulated Water Bottle", "brand": "Ironclad", "category": "sports-outdoors", "price": 223.02, "rating": 4.6, "review_count": 1899.0}, {"product_id": 126, "name": "Ironclad Sleeping Bag", "brand": "Ironclad", "category": "sports-outdoors", "price": 217.1, "rating": 3.5, "review_count": 3458.0}, {"product_id": 127, "name": "Norden Air Purifier", "brand": "Norden", "category": "home-goods", "price": 49.53, "rating": 3.4, "review_count": 2017.0}, {"product_id": 135, "name": "Orbis Wireless Earbuds", "brand": "Orbis", "category": "electronics", "price": 104.59, "rating": 3.7, "review_count": 2576.0}, {"product_id": 138, "name": "Maple Row Cast Iron Skillet", "brand": "Maple Row", "category": "home-goods", "price": 23.0, "rating": 3.4, "review_count": 517.0}, {"product_id": 139, "name": "Norden Stand Mixer", "brand": "Norden", "category": "home-goods", "price": 26.59, "rating": 4.5, "review_count": 2028.0}, {"product_id": 140, "name": "Lumen Electric Kettle", "brand": "Lumen", "category": "home-goods", "price": 73.0, "rating": 2.9, "review_count": 3957.0}, {"product_id": 142, "name": "PeakForm Insulated Water Bottle", "brand": "Peakform", "category": "sports-outdoors", "price": 241.59, "rating": 3.7, "review_count": 3235.0}, {"product_id": 144, "name": "Vertex Camping Tent 2P", "brand": "Vertex", "category": "sports-outdoors", "price": 325.11, "rating": 4.2, "review_count": 3721.0}, {"product_id": 145, "name": "Vertex Resistance Bands Set", "brand": "Vertex", "category": "sports-outdoors", "price": 182.65, "rating": 4.3, "review_count": 220.0}, {"product_id": 146, "name": "Orbis Portable SSD 1TB", "brand": "Orbis", "category": "electronics", "price": 287.89, "rating": 4.6, "review_count": 1144.0}, {"product_id": 147, "name": "Cascade Desk Lamp", "brand": "Cascade", "category": "home-goods", "price": 138.19, "rating": 3.5, "review_count": 2255.0}, {"product_id": 148, "name": "Orbis Smart Watch", "brand": "Orbis", "category": "electronics", "price": 432.94, "rating": 4.8, "review_count": 1875.0}, {"product_id": 149, "name": "Nexlon Portable SSD 1TB", "brand": "Nexlon", "category": "electronics", "price": NaN, "rating": 3.5, "review_count": 2924.0}];
+
+const categories = [...new Set(data.map(d => d.category))];
+const colors = { "electronics": "#2e7d5b", "home-goods": "#c77b2e", "sports-outdoors": "#3465a4" };
+
+function fmtMoney(n) { return "$" + n.toLocaleString(undefined, {maximumFractionDigits: 0}); }
+
+function render() {
+  const minV = parseFloat(document.getElementById("min-slider").value);
+  const maxV = parseFloat(document.getElementById("max-slider").value);
+  document.getElementById("min-label").textContent = minV;
+  document.getElementById("max-label").textContent = maxV;
+
+  const filtered = data.filter(d => d.price >= minV && d.price <= maxV);
+  const avgPrice = filtered.length ? filtered.reduce((s,d)=>s+d.price,0)/filtered.length : 0;
+  const avgRating = filtered.length ? filtered.reduce((s,d)=>s+(d.rating||0),0)/filtered.length : 0;
+
+  document.getElementById("kpi-price").textContent = fmtMoney(avgPrice);
+  document.getElementById("kpi-rating").textContent = avgRating.toFixed(2);
+  document.getElementById("kpi-count").textContent = filtered.length;
+
+  // Bar chart: avg price by category, within the filtered set
+  const maxCatPrice = Math.max(...categories.map(cat => {
+    const rows = filtered.filter(d => d.category === cat);
+    return rows.length ? rows.reduce((s,d)=>s+d.price,0)/rows.length : 0;
+  }), 1);
+
+  let barHtml = "";
+  categories.forEach(cat => {
+    const rows = filtered.filter(d => d.category === cat);
+    const avg = rows.length ? rows.reduce((s,d)=>s+d.price,0)/rows.length : 0;
+    const pct = (avg / maxCatPrice) * 100;
+    barHtml += `<div class="bar-row">
+      <div class="bar-label">${cat}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${colors[cat]||'#888'}"></div></div>
+      <div class="bar-value">${fmtMoney(avg)}</div>
+    </div>`;
+  });
+  document.getElementById("bar-chart").innerHTML = barHtml;
+
+  // Scatter: price vs rating
+  const svg = document.getElementById("scatter");
+  const W = 320, H = 260, PAD = 30;
+  const sortedPrices = data.map(d => d.price).sort((a,b) => a-b);
+  const p95 = sortedPrices[Math.floor(sortedPrices.length * 0.95)];
+  const maxPrice = p95; // clip extreme outliers so the main cluster is readable
+  let svgContent = `<line x1="${PAD}" y1="${H-PAD}" x2="${W-10}" y2="${H-PAD}" stroke="#ccc"/>
+    <line x1="${PAD}" y1="10" x2="${PAD}" y2="${H-PAD}" stroke="#ccc"/>
+    <text x="${W/2}" y="${H-6}" class="axis-label" text-anchor="middle">Price</text>
+    <text x="10" y="12" class="axis-label">Rating</text>`;
+  data.forEach(d => {
+    if (!d.rating) return;
+    const inRange = d.price >= minV && d.price <= maxV;
+    const clippedPrice = Math.min(d.price, maxPrice);
+    const x = PAD + (clippedPrice / maxPrice) * (W - PAD - 15);
+    const y = (H - PAD) - (d.rating / 5) * (H - PAD - 15);
+    svgContent += `<circle class="dot ${inRange ? '' : 'dim'}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/>`;
+  });
+  svg.innerHTML = svgContent;
+}
+
+document.getElementById("min-slider").addEventListener("input", () => {
+  const min = document.getElementById("min-slider");
+  const max = document.getElementById("max-slider");
+  if (parseFloat(min.value) > parseFloat(max.value)) min.value = max.value;
+  render();
+});
+document.getElementById("max-slider").addEventListener("input", () => {
+  const min = document.getElementById("min-slider");
+  const max = document.getElementById("max-slider");
+  if (parseFloat(max.value) < parseFloat(min.value)) max.value = min.value;
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

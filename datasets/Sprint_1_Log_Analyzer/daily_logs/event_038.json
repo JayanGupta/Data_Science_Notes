@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-03-01T05:38:00",
+  "ip_address": "45.33.32.156",
+  "status_code": 500,
+  "endpoint": "/static/app.js",
+  "response_time_ms": 228
+}

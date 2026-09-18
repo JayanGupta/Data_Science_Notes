@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-03-01T21:48:00",
+  "ip_address": "172.16.5.90",
+  "status_code": 502,
+  "endpoint": "/health",
+  "response_time_ms": 168
+}

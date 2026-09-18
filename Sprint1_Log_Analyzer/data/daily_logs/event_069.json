@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-03-01T11:02:00",
+  "status_code": 500,
+  "endpoint": "/api/login",
+  "response_time_ms": 340
+}

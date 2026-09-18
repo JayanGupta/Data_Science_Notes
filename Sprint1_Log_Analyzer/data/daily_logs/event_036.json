@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-03-01T02:41:00",
+  "ip_address": "203.0.113.55",
+  "status_code": 404,
+  "endpoint": "/api/orders",
+  "response_time_ms": 790
+}

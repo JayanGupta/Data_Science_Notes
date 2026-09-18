@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-03-01T10:10:00",
+  "ip_address": "10.0.0.8",
+  "endpoint": "/api/orders",
+  "response_time_ms": 758
+}

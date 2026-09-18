@@ -1,0 +1,150 @@
+listing_id,name,brand,category,price,rating,review_count,scraped_page
+1,Maple Row Electric Kettle,Maple Row,home-goods,$23.29,3.7,1269,11
+2,Lumen Air Purifier,Lumen,home-goods,186.52,2.9,2408,2
+3,Maple Row Electric Kettle,Maple Row,home-goods,28.70,3.6,4135,2
+4,Maple Row Wall Clock,Maple Row,home-goods,$127,4.7,859,5
+5,Sonyx Mechanical Keyboard,Sonyx,electronics,USD 358.70,3.2,2823,2
+6,Vertex Adjustable Dumbbells,Vertex,sports-outdoors,$70,4.1,743,8
+7,Lumen Bath Towel Set,Lumen,home-goods,140.42,3.2,3877,6
+8,PeakForm Trekking Poles,PeakForm,sports-outdoors,256.12,4.5,833,1
+9,Nexlon Smart Watch,Nexlon,electronics,$192,3.9,4054,2
+10,Lumen Storage Ottoman,Lumen,home-goods,22.26,2.8,1618,7
+11,Brightek Laptop Stand,  BRIGHTEK  ,electronics,$141.52,3.8,3823,8
+12,Sonyx Portable SSD 1TB,Sonyx,electronics,USD 28.55,3.6,862,11
+13,Ironclad Running Shoes,Ironclad,sports-outdoors,370.76,3.0,835,7
+14,TrailBlaze Insulated Water Bottle,TrailBlaze,sports-outdoors,196.87,4.5,1269,4
+15,Vantage Wireless Mouse,  VANTAGE  ,electronics,USD 2580.28,3.8,1200,1
+16,Vertex Fitness Tracker,Vertex,sports-outdoors,USD 37.64,4.4,1362,8
+17,Orbis Bluetooth Speaker,Orbis,electronics,$146,3.6,3679,6
+18,Nexlon Mechanical Keyboard,Nexlon,electronics,$441,4.3,2142,9
+19,PeakForm Adjustable Dumbbells,  PEAKFORM  ,sports-outdoors,USD 214.48,3.3,1144,8
+20,TrailBlaze Fitness Tracker,  TRAILBLAZE  ,sports-outdoors,USD 279.46,4.2,4083,1
+21,Brightek USB-C Hub,Brightek,electronics,USD 377.87,4.4,3756,9
+22,Summit Gear Hiking Backpack 40L,Summit Gear,sports-outdoors,$105,4.8,399,5
+23,Cascade Scented Candle Set,Cascade,home-goods,$50.04,4.0,3833,8
+24,TrailBlaze Camping Tent 2P,TrailBlaze,sports-outdoors,$67.83,4.9,2855,1
+25,Hearth&Co Electric Kettle,  HEARTH&CO  ,home-goods,USD 101.17,3.0,744,1
+26,Brightek Laptop Stand,  BRIGHTEK  ,electronics,$141.52,3.8,3823,8
+27,Cascade Memory Foam Pillow,Cascade,home-goods,$126.73,3.6,1658,7
+28,Orbis Noise Cancelling Headphones,  ORBIS  ,electronics,,3.6,758,6
+29,Nexlon Noise Cancelling Headphones,Nexlon,electronics,$77.20,4.9,1801,3
+30,Summit Gear Trekking Poles,Summit Gear,sports-outdoors,USD 101.58,3.4,2912,4
+31,Hearth&Co Electric Kettle,Hearth&Co,home-goods,$75.60,3.6,3414,12
+32,Sonyx Laptop Stand,Sonyx,electronics,$213.77,4.9,756,4
+33,Norden Ceramic Dinner Set,Norden,home-goods,USD 125.34,2.9,3368,9
+34,TrailBlaze Cycling Helmet,TrailBlaze,sports-outdoors,$20.61,4.2,2776,4
+35,Brightek Wireless Mouse,Brightek,electronics,USD 100.57,4.2,18,2
+36,Cascade Ceramic Dinner Set,Cascade,home-goods,$143,4.9,3576,11
+37,Lumen Air Purifier,  LUMEN  ,home-goods,$1363,4.8,96,1
+38,PeakForm Hiking Backpack 40L,PeakForm,sports-outdoors,$202.76,4.5,445,8
+39,Norden Desk Lamp,Norden,home-goods,$164,3.2,4032,4
+40,Cascade Throw Blanket,Cascade,home-goods,$212.11,4.0,3586,5
+41,Cascade Stand Mixer,Cascade,home-goods,$72.46,4.1,538,7
+42,Vantage Portable SSD 1TB,Vantage,electronics,$301,4.7,3193,12
+43,Ironclad Running Shoes,Ironclad,sports-outdoors,$180.34,4.1,3318,12
+44,Brightek Bluetooth Speaker,  BRIGHTEK  ,electronics,USD 318.21,4.4,2539,8
+45,Hearth&Co Ceramic Dinner Set,  HEARTH&CO  ,home-goods,USD 53.65,3.9,1805,4
+46,Sonyx Smart Watch,Sonyx,electronics,$290.98,3.0,,7
+47,Vantage Wireless Earbuds,Vantage,electronics,$250.20,4.0,1483,2
+48,PeakForm Cycling Helmet,PeakForm,sports-outdoors,$75.15,4.2,171,9
+49,Vantage 4K Monitor,Vantage,electronics,$20.25,3.2,2312,3
+50,Summit Gear Foam Roller,Summit Gear,sports-outdoors,179.91,4.8,567,6
+51,TrailBlaze Adjustable Dumbbells,TrailBlaze,sports-outdoors,362.06,3.4,834,4
+52,Cascade Scented Candle Set,  CASCADE  ,home-goods,169.70,4.9,4064,10
+53,Brightek USB-C Hub,Brightek,electronics,USD 377.87,4.4,3756,8
+54,TrailBlaze Camping Tent 2P,TrailBlaze,sports-outdoors,101.02,3.8,,9
+55,PeakForm Resistance Bands Set,PeakForm,sports-outdoors,$218.26,2.9,919,1
+56,Vantage USB-C Hub,Vantage,electronics,USD 279.72,3.1,1162,9
+57,Vertex Yoga Mat,  VERTEX  ,sports-outdoors,$123.09,2.9,3918,11
+58,PeakForm Hiking Backpack 40L,PeakForm,sports-outdoors,$100,2.9,719,5
+59,Cascade Ceramic Dinner Set,Cascade,home-goods,$63,3.7,628,1
+60,Hearth&Co Air Purifier,Hearth&Co,home-goods,$174,3.4,2195,4
+61,PeakForm Resistance Bands Set,PeakForm,sports-outdoors,$218.26,2.9,919,12
+62,Brightek Mechanical Keyboard,Brightek,electronics,USD 79.62,3.6,2986,8
+63,Vantage Mechanical Keyboard,Vantage,electronics,$59.45,3.4,1325,1
+64,Sonyx USB-C Hub,Sonyx,electronics,$399.20,3.2,348,8
+65,Hearth&Co Desk Lamp,Hearth&Co,home-goods,$203.65,4.4,658,1
+66,Maple Row Scented Candle Set,Maple Row,home-goods,$86.09,2.8,2395,4
+67,Norden Throw Blanket,Norden,home-goods,$10,5.0,2285,4
+68,Vertex Insulated Water Bottle,Vertex,sports-outdoors,65.78,4.3,2651,6
+69,Cascade Wall Clock,  CASCADE  ,home-goods,$88,3.7,2281,9
+70,Vertex Insulated Water Bottle,Vertex,sports-outdoors,71.65,4.2,3778,6
+71,Maple Row Scented Candle Set,Maple Row,home-goods,123.99,3.7,495,2
+72,Vertex Cycling Helmet,Vertex,sports-outdoors,USD 231.05,3.2,2630,7
+73,Lumen Desk Lamp,Lumen,home-goods,USD 180.21,2.9,2940,1
+74,Vantage 4K Monitor,  VANTAGE  ,electronics,$371,3.4,3405,3
+75,Orbis Laptop Stand,Orbis,electronics,,4.4,2496,12
+76,Ironclad Foam Roller,Ironclad,sports-outdoors,$150,3.0,3448,9
+77,Vantage 4K Monitor,Vantage,electronics,$206.67,4.1,841,2
+78,Cascade Wall Clock,  CASCADE  ,home-goods,$88,3.7,2281,6
+79,Hearth&Co Memory Foam Pillow,Hearth&Co,home-goods,,4.5,3880,8
+80,Orbis Power Bank 20000mAh,Orbis,electronics,USD 136.61,3.6,4081,7
+81,Sonyx Wireless Earbuds,  SONYX  ,electronics,$254.71,4.0,1831,3
+82,PeakForm Hiking Backpack 40L,  PEAKFORM  ,sports-outdoors,"$1,675.26",3.0,3844,5
+83,Nexlon Smart Watch,Nexlon,electronics,285.44,4.4,899,9
+84,Brightek Noise Cancelling Headphones,  BRIGHTEK  ,electronics,74.65,3.8,597,3
+85,Hearth&Co Throw Blanket,  HEARTH&CO  ,home-goods,USD 57.00,4.9,,10
+86,Vantage Power Bank 20000mAh,Vantage,electronics,$196.04,3.1,2717,4
+87,Sonyx 4K Monitor,Sonyx,electronics,USD 229.76,3.4,2031,9
+88,Vertex Foam Roller,Vertex,sports-outdoors,USD 135.54,3.8,1508,11
+89,Vantage Portable SSD 1TB,Vantage,electronics,$301,4.7,3193,3
+90,TrailBlaze Camping Tent 2P,TrailBlaze,sports-outdoors,101.02,3.8,,2
+91,Orbis USB-C Hub,Orbis,electronics,USD 278.67,3.4,4165,5
+92,Orbis Power Bank 20000mAh,Orbis,electronics,436.13,3.4,1721,6
+93,Norden Throw Blanket,Norden,home-goods,$10,5.0,2285,7
+94,Ironclad Adjustable Dumbbells,Ironclad,sports-outdoors,$65,3.6,701,1
+95,PeakForm Trekking Poles,PeakForm,sports-outdoors,USD 25.26,3.8,495,11
+96,Orbis 4K Monitor,Orbis,electronics,USD 428.35,4.4,3743,4
+97,Hearth&Co Cast Iron Skillet,Hearth&Co,home-goods,68.76,4.9,1016,2
+98,Vantage Laptop Stand,Vantage,electronics,$115.37,3.8,3136,11
+99,TrailBlaze Adjustable Dumbbells,TrailBlaze,sports-outdoors,187.14,4.6,2935,2
+100,Lumen Bath Towel Set,Lumen,home-goods,$214,3.2,315,5
+101,Lumen Cast Iron Skillet,Lumen,home-goods,USD 88.27,3.2,2986,1
+102,Vantage Webcam,Vantage,electronics,$191.04,2.9,1066,2
+103,TrailBlaze Resistance Bands Set,TrailBlaze,sports-outdoors,$359,3.5,3187,11
+104,Maple Row Stand Mixer,Maple Row,home-goods,$181,3.9,74,6
+105,Vertex Sleeping Bag,Vertex,sports-outdoors,USD 22.65,4.6,3317,11
+106,Vantage Wireless Mouse,Vantage,electronics,$222.94,4.5,2726,2
+107,Summit Gear Sleeping Bag,  SUMMIT GEAR  ,sports-outdoors,294.40,3.0,3871,11
+108,PeakForm Running Shoes,PeakForm,sports-outdoors,USD 245.33,3.3,3184,9
+109,Brightek Bluetooth Speaker,Brightek,electronics,$198,3.0,2573,2
+110,Hearth&Co Storage Ottoman,Hearth&Co,home-goods,USD 145.44,3.6,3638,7
+111,Cascade Storage Ottoman,Cascade,home-goods,USD 163.94,3.3,2386,10
+112,Vertex Yoga Mat,Vertex,sports-outdoors,$261,4.8,2176,1
+113,Hearth&Co Stand Mixer,Hearth&Co,home-goods,USD 65.63,3.0,4086,4
+114,Sonyx USB-C Hub,Sonyx,electronics,,3.8,1598,6
+115,Maple Row Ceramic Dinner Set,Maple Row,home-goods,USD 97.12,3.4,2134,3
+116,Brightek Webcam,Brightek,electronics,USD 61.23,3.8,4058,4
+117,Brightek Webcam,Brightek,electronics,$233,,151,9
+118,TrailBlaze Fitness Tracker,TrailBlaze,sports-outdoors,USD 331.47,2.8,1987,12
+119,Vantage Wireless Earbuds,  VANTAGE  ,electronics,$187,4.6,774,7
+120,Cascade Bath Towel Set,Cascade,home-goods,USD 132.35,,3663,8
+121,Brightek Webcam,  BRIGHTEK  ,electronics,$394,3.4,1987,6
+122,Hearth&Co Memory Foam Pillow,Hearth&Co,home-goods,114.61,3.6,4126,7
+123,TrailBlaze Yoga Mat,TrailBlaze,sports-outdoors,$379,4.2,1012,1
+124,TrailBlaze Fitness Tracker,  TRAILBLAZE  ,sports-outdoors,USD 279.46,4.2,4083,1
+125,Ironclad Insulated Water Bottle,Ironclad,sports-outdoors,USD 223.02,4.6,1899,12
+126,Ironclad Sleeping Bag,Ironclad,sports-outdoors,$217.10,3.5,3458,1
+127,Norden Air Purifier,  NORDEN  ,home-goods,49.53,3.4,2017,1
+128,Summit Gear Foam Roller,Summit Gear,sports-outdoors,USD 182.13,4.0,1028,5
+129,Hearth&Co Storage Ottoman,Hearth&Co,home-goods,$206.68,3.1,787,5
+130,Cascade Wall Clock,Cascade,home-goods,131.25,4.5,3626,5
+131,Cascade Scented Candle Set,Cascade,home-goods,$21.61,4.7,3443,1
+132,PeakForm Hiking Backpack 40L,  PEAKFORM  ,sports-outdoors,267.29,2.9,2980,12
+133,Lumen Air Purifier,  LUMEN  ,home-goods,$104.31,4.5,54,6
+134,Sonyx Portable SSD 1TB,Sonyx,electronics,,3.1,344,9
+135,Orbis Wireless Earbuds,Orbis,electronics,USD 104.59,3.7,2576,12
+136,PeakForm Trekking Poles,PeakForm,sports-outdoors,$131.09,3.5,720,7
+137,Vantage Mechanical Keyboard,Vantage,electronics,281.75,4.5,1601,6
+138,Maple Row Cast Iron Skillet,  MAPLE ROW  ,home-goods,$23,3.4,517,12
+139,Norden Stand Mixer,Norden,home-goods,USD 26.59,4.5,2028,7
+140,Lumen Electric Kettle,Lumen,home-goods,$73,2.9,3957,10
+141,Hearth&Co Cast Iron Skillet,Hearth&Co,home-goods,68.76,4.9,1016,8
+142,PeakForm Insulated Water Bottle,PeakForm,sports-outdoors,$241.59,3.7,3235,7
+143,Hearth&Co Storage Ottoman,Hearth&Co,home-goods,21.42,3.5,2928,8
+144,Vertex Camping Tent 2P,Vertex,sports-outdoors,USD 325.11,4.2,3721,7
+145,Vertex Resistance Bands Set,Vertex,sports-outdoors,USD 182.65,4.3,220,7
+146,Orbis Portable SSD 1TB,Orbis,electronics,$287.89,4.6,1144,12
+147,Cascade Desk Lamp,Cascade,home-goods,USD 138.19,3.5,2255,5
+148,Orbis Smart Watch,Orbis,electronics,$432.94,4.8,1875,3
+149,Nexlon Portable SSD 1TB,Nexlon,electronics,,3.5,2924,4

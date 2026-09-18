@@ -1,0 +1,596 @@
+review_id,listing_id,review_date,rating,review_text
+1,63,07 January 2026,3,Not worth the price.
+2,38,03/15/2026,4,Exceeded my expectations.
+3,51,2026-02-22,3,Customer service was unhelpful.
+4,15,2026.01.20,5,"Solid build quality, would buy again."
+5,116,17 March 2026,4,"Works great, exactly as described."
+6,96,14 January 2026,4,"Works great, exactly as described."
+7,103,2026.01.30,4,"Solid build quality, would buy again."
+8,96,01 February 2026,5,"Works great, exactly as described."
+9,10,02/04/2026,2,"Arrived damaged, disappointed."
+10,35,2026.03.12,3,Customer service was unhelpful.
+11,46,2026.03.06,4,Really happy with this purchase.
+12,41,02/19/2026,4,"Solid build quality, would buy again."
+13,142,2026-01-14,4,Exceeded my expectations.
+14,21,14 January 2026,5,"Works great, exactly as described."
+15,34,09 February 2026,5,"Works great, exactly as described."
+16,102,2026-01-20,2,Customer service was unhelpful.
+17,149,29 January 2026,3,Customer service was unhelpful.
+18,48,01/09/2026,4,"Solid build quality, would buy again."
+19,34,26 January 2026,4,Exceeded my expectations.
+20,146,03/08/2026,4,Exceeded my expectations.
+21,56,2026-02-18,3,Not worth the price.
+22,50,2026.02.25,5,"Works great, exactly as described."
+23,127,2026-01-11,3,Doesn't match the description.
+24,67,2026-01-24,4,Good value for the price.
+25,11,01/30/2026,5,Good value for the price.
+26,39,01/19/2026,3,Broke after two weeks.
+27,51,28 January 2026,4,Really happy with this purchase.
+28,23,2026.02.02,4,Exceeded my expectations.
+29,22,13 February 2026,4,Good value for the price.
+30,107,2026-02-19,3,Not worth the price.
+31,63,2026.03.17,4,Good value for the price.
+32,39,2026.01.24,3,Doesn't match the description.
+33,46,2026.01.11,3,"Arrived damaged, disappointed."
+34,47,24 January 2026,5,"Works great, exactly as described."
+35,34,2026-03-04,3,Doesn't match the description.
+36,30,2026-02-10,4,Really happy with this purchase.
+37,147,2026-01-12,3,Broke after two weeks.
+38,16,2026.02.18,5,Good value for the price.
+39,147,2026.01.08,3,Customer service was unhelpful.
+40,97,2026-02-24,4,"Solid build quality, would buy again."
+41,39,05 March 2026,4,"Works great, exactly as described."
+42,76,2026-03-06,4,Exceeded my expectations.
+43,91,2026.02.28,4,Exceeded my expectations.
+44,146,2026-01-08,5,Good value for the price.
+45,15,2026-01-21,4,"Works great, exactly as described."
+46,2,2026-02-11,3,Broke after two weeks.
+47,11,2026-02-09,4,Good value for the price.
+48,62,2026-03-15,3,Doesn't match the description.
+49,42,2026-02-20,5,Really happy with this purchase.
+50,67,27 February 2026,5,"Solid build quality, would buy again."
+51,126,2026-02-17,3,Broke after two weeks.
+52,7,2026-02-09,3,Not worth the price.
+53,142,2026.02.05,5,Exceeded my expectations.
+54,48,01/26/2026,3,Doesn't match the description.
+55,84,21 January 2026,4,Good value for the price.
+56,18,10 January 2026,5,Really happy with this purchase.
+57,66,01/08/2026,4,Exceeded my expectations.
+58,16,2026.02.04,4,"Works great, exactly as described."
+59,51,2026-02-15,4,Exceeded my expectations.
+60,10,01/10/2026,3,"Arrived damaged, disappointed."
+61,67,2026.01.15,5,Good value for the price.
+62,10,14 February 2026,2,Not worth the price.
+63,88,2026-02-12,3,"Arrived damaged, disappointed."
+64,135,02/25/2026,5,"Works great, exactly as described."
+65,76,01 March 2026,3,Doesn't match the description.
+66,91,07 March 2026,4,"Solid build quality, would buy again."
+67,113,02/27/2026,2,Not worth the price.
+68,33,2026-03-13,3,Broke after two weeks.
+69,46,02/14/2026,3,Doesn't match the description.
+70,13,03/17/2026,2,Customer service was unhelpful.
+71,24,02/04/2026,4,Really happy with this purchase.
+72,145,2026-01-30,5,Exceeded my expectations.
+73,12,2026-01-07,3,Broke after two weeks.
+74,149,2026-01-10,4,Good value for the price.
+75,15,05 February 2026,4,"Works great, exactly as described."
+76,144,2026-01-07,4,Good value for the price.
+77,42,05 March 2026,4,"Solid build quality, would buy again."
+78,21,18 March 2026,5,"Works great, exactly as described."
+79,48,2026.03.17,5,Good value for the price.
+80,24,2026.03.13,5,Really happy with this purchase.
+81,16,03/13/2026,4,"Solid build quality, would buy again."
+82,146,2026-02-09,4,"Solid build quality, would buy again."
+83,69,13 March 2026,3,Not worth the price.
+84,45,2026-03-21,5,Really happy with this purchase.
+85,11,2026.02.25,4,"Works great, exactly as described."
+86,91,2026-02-02,4,Good value for the price.
+87,76,2026.02.16,4,"Solid build quality, would buy again."
+88,12,2026.02.23,5,Good value for the price.
+89,27,02 March 2026,3,"Arrived damaged, disappointed."
+90,125,10 February 2026,4,Really happy with this purchase.
+91,55,31 January 2026,4,"Solid build quality, would buy again."
+92,97,2026-02-22,5,Exceeded my expectations.
+93,86,2026-02-26,3,Customer service was unhelpful.
+94,11,2026-01-09,3,Customer service was unhelpful.
+95,12,30 January 2026,4,"Works great, exactly as described."
+96,64,2026-01-27,4,Really happy with this purchase.
+97,68,2026-03-05,3,Not worth the price.
+98,72,01/24/2026,2,"Arrived damaged, disappointed."
+99,140,2026.01.18,4,Really happy with this purchase.
+100,40,09 January 2026,3,Broke after two weeks.
+101,47,2026.02.27,3,Not worth the price.
+102,73,2026-01-07,4,Good value for the price.
+103,25,02/21/2026,3,"Arrived damaged, disappointed."
+104,24,02/19/2026,4,"Solid build quality, would buy again."
+105,17,03/10/2026,4,Good value for the price.
+106,23,2026-02-05,4,"Works great, exactly as described."
+107,139,2026.02.10,4,"Solid build quality, would buy again."
+108,120,2026-01-23,5,Good value for the price.
+109,79,2026-03-09,5,"Solid build quality, would buy again."
+110,97,2026-01-14,5,Good value for the price.
+111,42,01/05/2026,4,Good value for the price.
+112,126,20 March 2026,4,Exceeded my expectations.
+113,149,19 January 2026,3,Broke after two weeks.
+114,6,24 February 2026,4,"Solid build quality, would buy again."
+115,87,03/10/2026,3,Customer service was unhelpful.
+116,84,2026-01-06,4,Really happy with this purchase.
+117,13,2026-01-30,3,Broke after two weeks.
+118,1,2026.02.26,5,"Works great, exactly as described."
+119,76,2026.01.23,4,"Works great, exactly as described."
+120,86,05 February 2026,2,Doesn't match the description.
+121,140,2026.01.12,3,Broke after two weeks.
+122,85,2026.01.07,5,"Solid build quality, would buy again."
+123,80,2026.01.16,5,Really happy with this purchase.
+124,91,2026.02.16,3,Broke after two weeks.
+125,29,2026.03.12,4,Good value for the price.
+126,76,2026-01-21,4,Exceeded my expectations.
+127,49,2026-01-22,2,Doesn't match the description.
+128,135,05 January 2026,4,Exceeded my expectations.
+129,9,2026.03.08,3,Broke after two weeks.
+130,56,2026-03-07,3,"Arrived damaged, disappointed."
+131,39,2026-01-13,3,Not worth the price.
+132,42,2026-01-22,4,"Solid build quality, would buy again."
+133,57,25 February 2026,2,Doesn't match the description.
+134,47,2026-02-21,5,"Solid build quality, would buy again."
+135,15,2026.02.03,3,"Arrived damaged, disappointed."
+136,86,2026-01-23,3,Broke after two weeks.
+137,64,2026-03-11,4,Exceeded my expectations.
+138,79,2026.02.18,5,Really happy with this purchase.
+139,62,05 March 2026,5,Exceeded my expectations.
+140,44,05 March 2026,5,Exceeded my expectations.
+141,144,2026.02.12,4,"Works great, exactly as described."
+142,62,2026-01-08,4,Really happy with this purchase.
+143,102,06 February 2026,3,Not worth the price.
+144,8,19 March 2026,3,Doesn't match the description.
+145,40,23 January 2026,5,Exceeded my expectations.
+146,42,02/22/2026,5,"Works great, exactly as described."
+147,94,2026-02-26,4,"Works great, exactly as described."
+148,2,11 January 2026,3,Doesn't match the description.
+149,139,2026-02-04,5,"Works great, exactly as described."
+150,126,17 March 2026,3,Customer service was unhelpful.
+151,47,2026-01-14,4,"Works great, exactly as described."
+152,94,01 February 2026,3,"Arrived damaged, disappointed."
+153,55,02/23/2026,3,"Arrived damaged, disappointed."
+154,66,02/13/2026,3,"Arrived damaged, disappointed."
+155,19,01/25/2026,4,Exceeded my expectations.
+156,84,2026-02-26,4,Exceeded my expectations.
+157,94,2026.02.19,5,Good value for the price.
+158,102,03/16/2026,3,Doesn't match the description.
+159,45,2026-02-05,4,Exceeded my expectations.
+160,46,13 January 2026,3,Doesn't match the description.
+161,115,01/13/2026,4,Exceeded my expectations.
+162,85,2026-01-18,5,"Solid build quality, would buy again."
+163,149,2026.01.05,3,"Arrived damaged, disappointed."
+164,18,17 January 2026,4,Really happy with this purchase.
+165,125,18 March 2026,4,Exceeded my expectations.
+166,146,2026.03.20,3,"Arrived damaged, disappointed."
+167,51,2026.01.11,4,Good value for the price.
+168,50,02/03/2026,4,Good value for the price.
+169,76,01/10/2026,3,"Arrived damaged, disappointed."
+170,13,03/09/2026,3,Broke after two weeks.
+171,91,02/16/2026,4,Really happy with this purchase.
+172,147,21 March 2026,4,Really happy with this purchase.
+173,25,01/16/2026,4,Really happy with this purchase.
+174,104,2026.01.25,4,"Solid build quality, would buy again."
+175,51,2026-02-01,3,"Arrived damaged, disappointed."
+176,123,2026-03-13,4,"Works great, exactly as described."
+177,50,02/03/2026,4,Good value for the price.
+178,145,2026-03-17,4,Really happy with this purchase.
+179,110,2026-01-28,4,"Solid build quality, would buy again."
+180,11,23 January 2026,5,"Works great, exactly as described."
+181,135,12 January 2026,4,Exceeded my expectations.
+182,21,2026.02.22,3,"Arrived damaged, disappointed."
+183,50,20 January 2026,5,Really happy with this purchase.
+184,87,01/19/2026,4,Exceeded my expectations.
+185,145,2026-01-11,5,Exceeded my expectations.
+186,63,2026.01.29,4,Really happy with this purchase.
+187,86,02/25/2026,4,Really happy with this purchase.
+188,64,02/06/2026,3,"Arrived damaged, disappointed."
+189,80,30 January 2026,4,Exceeded my expectations.
+190,102,02/19/2026,4,"Works great, exactly as described."
+191,65,22 January 2026,4,Good value for the price.
+192,96,10 February 2026,5,"Works great, exactly as described."
+193,104,02/28/2026,5,Good value for the price.
+194,86,2026-01-23,3,Broke after two weeks.
+195,21,17 February 2026,5,"Solid build quality, would buy again."
+196,57,2026.02.12,3,"Arrived damaged, disappointed."
+197,86,2026.02.04,2,Broke after two weeks.
+198,35,25 February 2026,3,Not worth the price.
+199,72,06 January 2026,3,Broke after two weeks.
+200,140,01/06/2026,3,Not worth the price.
+201,104,09 February 2026,5,Really happy with this purchase.
+202,16,03/01/2026,5,Exceeded my expectations.
+203,86,2026-01-24,2,"Arrived damaged, disappointed."
+204,32,2026-03-14,5,"Works great, exactly as described."
+205,84,2026.02.16,3,Doesn't match the description.
+206,62,24 February 2026,2,Customer service was unhelpful.
+207,17,2026.01.17,3,"Arrived damaged, disappointed."
+208,27,15 February 2026,3,Broke after two weeks.
+209,103,2026-03-17,3,Doesn't match the description.
+210,4,02/23/2026,4,Exceeded my expectations.
+211,103,2026.01.07,3,"Arrived damaged, disappointed."
+212,32,2026-01-18,5,"Works great, exactly as described."
+213,1,09 March 2026,3,Broke after two weeks.
+214,47,2026.01.30,3,Not worth the price.
+215,55,03/08/2026,2,Not worth the price.
+216,110,12 February 2026,5,"Works great, exactly as described."
+217,1,02/15/2026,4,Really happy with this purchase.
+218,49,2026-01-22,2,Doesn't match the description.
+219,34,09 February 2026,4,Good value for the price.
+220,47,02/03/2026,5,Really happy with this purchase.
+221,6,01/27/2026,5,"Works great, exactly as described."
+222,146,2026.02.24,5,Really happy with this purchase.
+223,44,2026.01.19,5,"Solid build quality, would buy again."
+224,138,2026-03-08,2,Broke after two weeks.
+225,23,2026-02-26,5,Exceeded my expectations.
+226,76,2026.01.13,2,Broke after two weeks.
+227,46,12 January 2026,2,"Arrived damaged, disappointed."
+228,49,2026-03-10,3,"Arrived damaged, disappointed."
+229,13,02/09/2026,3,Broke after two weeks.
+230,44,2026.03.09,5,Exceeded my expectations.
+231,55,16 March 2026,2,Doesn't match the description.
+232,81,2026.01.06,5,Really happy with this purchase.
+233,127,03/03/2026,4,Really happy with this purchase.
+234,48,2026-01-28,4,"Solid build quality, would buy again."
+235,6,2026-02-23,5,"Solid build quality, would buy again."
+236,116,2026-02-28,5,Really happy with this purchase.
+237,125,02/01/2026,5,"Works great, exactly as described."
+238,64,2026.02.26,4,"Works great, exactly as described."
+239,50,02/01/2026,5,"Works great, exactly as described."
+240,51,2026-02-20,3,Not worth the price.
+241,36,2026.01.24,5,"Works great, exactly as described."
+242,138,2026.03.12,3,Doesn't match the description.
+243,76,2026-02-22,3,Customer service was unhelpful.
+244,56,20 January 2026,3,Broke after two weeks.
+245,28,2026.03.09,4,Good value for the price.
+246,64,31 January 2026,4,Really happy with this purchase.
+247,72,03/15/2026,3,Not worth the price.
+248,21,2026-03-11,5,Really happy with this purchase.
+249,21,2026-02-06,4,"Solid build quality, would buy again."
+250,2,2026-03-11,2,Broke after two weeks.
+251,84,04 March 2026,3,Doesn't match the description.
+252,9,2026.03.12,5,"Works great, exactly as described."
+253,32,02/24/2026,5,Good value for the price.
+254,73,13 March 2026,4,Really happy with this purchase.
+255,147,02/18/2026,3,"Arrived damaged, disappointed."
+256,138,10 January 2026,2,Not worth the price.
+257,144,01/16/2026,5,Exceeded my expectations.
+258,140,2026.01.12,3,Not worth the price.
+259,34,01/19/2026,4,Really happy with this purchase.
+260,85,07 January 2026,5,Really happy with this purchase.
+261,42,02/07/2026,4,Good value for the price.
+262,34,01/30/2026,3,Not worth the price.
+263,84,2026-01-20,3,"Arrived damaged, disappointed."
+264,44,2026.03.01,4,"Works great, exactly as described."
+265,105,2026-02-12,5,"Works great, exactly as described."
+266,47,16 January 2026,4,"Works great, exactly as described."
+267,18,18 January 2026,3,Customer service was unhelpful.
+268,48,2026.03.16,5,Really happy with this purchase.
+269,98,24 January 2026,5,Exceeded my expectations.
+270,45,04 February 2026,5,Good value for the price.
+271,111,02/02/2026,3,Broke after two weeks.
+272,142,01/20/2026,3,Broke after two weeks.
+273,56,2026-02-21,2,"Arrived damaged, disappointed."
+274,47,2026-01-29,3,"Arrived damaged, disappointed."
+275,29,2026.02.19,5,Good value for the price.
+276,101,18 February 2026,3,Customer service was unhelpful.
+277,1,21 March 2026,3,Customer service was unhelpful.
+278,55,02/13/2026,3,Doesn't match the description.
+279,126,03/06/2026,3,"Arrived damaged, disappointed."
+280,1,17 March 2026,5,Exceeded my expectations.
+281,38,2026.03.07,5,"Works great, exactly as described."
+282,41,2026-01-29,4,Exceeded my expectations.
+283,19,03/14/2026,4,Exceeded my expectations.
+284,94,2026-02-02,4,Good value for the price.
+285,107,2026-03-01,3,Not worth the price.
+286,80,02/17/2026,4,Good value for the price.
+287,50,2026.03.13,4,Exceeded my expectations.
+288,40,01/17/2026,3,Not worth the price.
+289,67,2026-03-01,4,Good value for the price.
+290,27,2026.02.21,3,Customer service was unhelpful.
+291,4,01/29/2026,5,Really happy with this purchase.
+292,123,09 February 2026,4,"Solid build quality, would buy again."
+293,27,2026.03.08,4,Exceeded my expectations.
+294,18,06 January 2026,4,"Works great, exactly as described."
+295,101,2026.03.20,3,Broke after two weeks.
+296,34,2026-03-08,5,Good value for the price.
+297,21,2026-03-19,3,Customer service was unhelpful.
+298,127,03/10/2026,3,Not worth the price.
+299,145,2026.02.22,4,Exceeded my expectations.
+300,45,2026-01-17,4,Really happy with this purchase.
+301,7,2026-02-21,3,Not worth the price.
+302,69,14 March 2026,4,"Works great, exactly as described."
+303,10,01/30/2026,4,Exceeded my expectations.
+304,125,03/08/2026,5,Really happy with this purchase.
+305,49,03/11/2026,2,"Arrived damaged, disappointed."
+306,127,2026.03.08,4,Really happy with this purchase.
+307,25,2026-03-09,4,"Works great, exactly as described."
+308,14,14 March 2026,5,"Solid build quality, would buy again."
+309,147,2026.02.19,3,Not worth the price.
+310,149,2026.03.10,3,Doesn't match the description.
+311,48,02 February 2026,5,"Solid build quality, would buy again."
+312,23,05 February 2026,3,Broke after two weeks.
+313,113,2026-02-16,4,Really happy with this purchase.
+314,73,2026.02.02,3,Not worth the price.
+315,60,2026.02.18,3,"Arrived damaged, disappointed."
+316,64,2026.03.14,3,Not worth the price.
+317,115,01/15/2026,4,"Solid build quality, would buy again."
+318,40,19 January 2026,4,Good value for the price.
+319,116,06 January 2026,3,Broke after two weeks.
+320,107,2026-03-08,2,Doesn't match the description.
+321,101,03/21/2026,4,Good value for the price.
+322,80,30 January 2026,4,Exceeded my expectations.
+323,146,2026-02-05,4,"Works great, exactly as described."
+324,38,2026.03.07,5,"Works great, exactly as described."
+325,42,20 February 2026,4,"Works great, exactly as described."
+326,105,2026-02-21,4,Really happy with this purchase.
+327,110,2026-01-28,4,"Solid build quality, would buy again."
+328,11,09 March 2026,4,"Solid build quality, would buy again."
+329,24,2026.02.04,5,"Solid build quality, would buy again."
+330,30,2026-03-15,3,Customer service was unhelpful.
+331,32,2026.03.08,5,"Solid build quality, would buy again."
+332,29,2026.02.24,5,Really happy with this purchase.
+333,27,2026-01-28,3,"Arrived damaged, disappointed."
+334,127,2026-02-09,4,Really happy with this purchase.
+335,68,2026-02-11,5,Exceeded my expectations.
+336,11,2026-03-14,4,Good value for the price.
+337,101,02/24/2026,3,Doesn't match the description.
+338,91,10 March 2026,4,"Works great, exactly as described."
+339,15,13 March 2026,5,"Works great, exactly as described."
+340,13,22 January 2026,3,Customer service was unhelpful.
+341,108,02/08/2026,4,"Solid build quality, would buy again."
+342,81,2026.02.09,3,"Arrived damaged, disappointed."
+343,91,2026.01.12,3,Doesn't match the description.
+344,110,2026-03-12,3,Broke after two weeks.
+345,42,2026.03.19,5,Good value for the price.
+346,62,05 March 2026,5,Exceeded my expectations.
+347,44,11 February 2026,5,Exceeded my expectations.
+348,1,2026-01-25,4,"Solid build quality, would buy again."
+349,36,2026-01-24,5,Really happy with this purchase.
+350,18,2026.01.29,4,Good value for the price.
+351,96,2026-01-15,5,Good value for the price.
+352,85,2026-02-03,5,"Works great, exactly as described."
+353,5,2026-02-16,4,Exceeded my expectations.
+354,33,02/27/2026,4,Really happy with this purchase.
+355,48,2026-01-05,5,Exceeded my expectations.
+356,1,01/28/2026,3,"Arrived damaged, disappointed."
+357,120,22 January 2026,4,Really happy with this purchase.
+358,11,09 February 2026,5,Exceeded my expectations.
+359,50,01/14/2026,5,"Solid build quality, would buy again."
+360,57,12 March 2026,2,"Arrived damaged, disappointed."
+361,41,2026-02-05,4,"Solid build quality, would buy again."
+362,146,11 January 2026,5,"Solid build quality, would buy again."
+363,44,2026.01.27,4,Really happy with this purchase.
+364,146,2026-02-11,4,"Works great, exactly as described."
+365,51,2026-02-20,3,Not worth the price.
+366,139,2026.03.06,5,"Solid build quality, would buy again."
+367,8,2026.02.21,5,Really happy with this purchase.
+368,16,2026-01-29,4,Really happy with this purchase.
+369,50,02/05/2026,4,"Solid build quality, would buy again."
+370,67,2026.03.18,4,Exceeded my expectations.
+371,8,2026-03-06,5,Exceeded my expectations.
+372,113,03/07/2026,2,"Arrived damaged, disappointed."
+373,88,2026-02-25,3,"Arrived damaged, disappointed."
+374,126,14 February 2026,3,Customer service was unhelpful.
+375,46,03/17/2026,2,Not worth the price.
+376,91,02/08/2026,4,Good value for the price.
+377,147,02/17/2026,4,Exceeded my expectations.
+378,30,2026-03-21,4,Really happy with this purchase.
+379,23,2026-02-24,3,"Arrived damaged, disappointed."
+380,144,2026.02.25,5,Really happy with this purchase.
+381,98,01 March 2026,5,Really happy with this purchase.
+382,85,12 January 2026,5,"Works great, exactly as described."
+383,148,2026.01.17,4,"Solid build quality, would buy again."
+384,38,29 January 2026,4,"Works great, exactly as described."
+385,13,2026.01.23,4,"Solid build quality, would buy again."
+386,5,01/22/2026,4,Really happy with this purchase.
+387,144,2026.03.01,3,Doesn't match the description.
+388,10,12 March 2026,2,"Arrived damaged, disappointed."
+389,138,01/12/2026,3,"Arrived damaged, disappointed."
+390,125,09 March 2026,5,"Works great, exactly as described."
+391,116,2026.03.09,5,Good value for the price.
+392,24,2026.02.07,5,Exceeded my expectations.
+393,125,08 January 2026,4,"Solid build quality, would buy again."
+394,5,2026-01-23,3,"Arrived damaged, disappointed."
+395,125,2026-02-17,3,"Arrived damaged, disappointed."
+396,86,2026-02-01,3,Not worth the price.
+397,29,2026.02.15,5,"Solid build quality, would buy again."
+398,145,07 January 2026,5,Good value for the price.
+399,8,07 January 2026,5,"Works great, exactly as described."
+400,39,05 March 2026,4,"Works great, exactly as described."
+401,6,2026.01.18,3,Customer service was unhelpful.
+402,79,2026-01-24,5,Really happy with this purchase.
+403,40,2026-02-16,4,Exceeded my expectations.
+404,85,2026-01-17,5,Really happy with this purchase.
+405,15,03/13/2026,4,"Solid build quality, would buy again."
+406,84,02/18/2026,4,Exceeded my expectations.
+407,135,02/07/2026,5,"Solid build quality, would buy again."
+408,144,11 February 2026,4,"Solid build quality, would buy again."
+409,46,2026-01-05,3,"Arrived damaged, disappointed."
+410,144,2026.02.25,5,Really happy with this purchase.
+411,47,2026-02-10,4,Exceeded my expectations.
+412,103,2026.01.29,4,Good value for the price.
+413,94,2026-01-31,4,"Solid build quality, would buy again."
+414,13,01/13/2026,3,Broke after two weeks.
+415,4,02/23/2026,4,Exceeded my expectations.
+416,55,03/08/2026,2,Not worth the price.
+417,144,2026-03-10,5,Exceeded my expectations.
+418,5,2026-01-31,3,Not worth the price.
+419,79,28 January 2026,5,"Works great, exactly as described."
+420,138,2026.01.11,4,Good value for the price.
+421,18,02/21/2026,4,Really happy with this purchase.
+422,135,2026.02.10,5,Good value for the price.
+423,115,2026.01.10,3,Not worth the price.
+424,65,2026-02-24,4,Really happy with this purchase.
+425,56,2026.02.25,2,Not worth the price.
+426,98,24 January 2026,5,Exceeded my expectations.
+427,85,26 January 2026,5,Good value for the price.
+428,120,2026.02.18,4,"Works great, exactly as described."
+429,49,04 March 2026,2,Doesn't match the description.
+430,1,2026-01-29,5,"Solid build quality, would buy again."
+431,49,02/01/2026,4,"Works great, exactly as described."
+432,20,02/12/2026,4,Exceeded my expectations.
+433,146,03/15/2026,5,Good value for the price.
+434,102,2026-02-26,3,"Arrived damaged, disappointed."
+435,127,2026-02-14,3,Doesn't match the description.
+436,148,2026-03-08,5,Exceeded my expectations.
+437,15,2026.02.26,5,Exceeded my expectations.
+438,145,2026.03.18,4,Exceeded my expectations.
+439,35,03/06/2026,5,Exceeded my expectations.
+440,56,2026-02-01,3,"Arrived damaged, disappointed."
+441,40,01/14/2026,4,Exceeded my expectations.
+442,64,2026-01-18,4,Good value for the price.
+443,40,03/17/2026,4,Good value for the price.
+444,4,01/06/2026,4,Exceeded my expectations.
+445,12,02/02/2026,3,Doesn't match the description.
+446,6,02/05/2026,5,Really happy with this purchase.
+447,120,2026-01-20,5,Really happy with this purchase.
+448,51,12 March 2026,3,"Arrived damaged, disappointed."
+449,12,01/31/2026,3,Broke after two weeks.
+450,142,05 February 2026,3,Doesn't match the description.
+451,62,2026.01.22,4,Good value for the price.
+452,49,01/27/2026,3,Customer service was unhelpful.
+453,44,02/16/2026,3,Broke after two weeks.
+454,127,2026-03-10,2,"Arrived damaged, disappointed."
+455,125,09 March 2026,5,"Works great, exactly as described."
+456,145,17 February 2026,5,"Solid build quality, would buy again."
+457,126,03/04/2026,3,Doesn't match the description.
+458,79,03/02/2026,5,Exceeded my expectations.
+459,123,01/07/2026,3,"Arrived damaged, disappointed."
+460,75,01 February 2026,5,Good value for the price.
+461,66,2026-01-10,2,"Arrived damaged, disappointed."
+462,68,2026.03.16,5,"Solid build quality, would buy again."
+463,72,2026.01.23,3,Doesn't match the description.
+464,67,01/23/2026,5,Exceeded my expectations.
+465,12,10 March 2026,4,Good value for the price.
+466,76,09 January 2026,3,Doesn't match the description.
+467,72,2026-02-06,4,"Solid build quality, would buy again."
+468,97,02/01/2026,4,Good value for the price.
+469,30,18 March 2026,3,Broke after two weeks.
+470,147,15 February 2026,3,Not worth the price.
+471,24,2026.01.20,4,"Works great, exactly as described."
+472,75,2026-02-28,4,"Solid build quality, would buy again."
+473,18,2026-03-01,4,Good value for the price.
+474,24,2026.01.10,5,"Works great, exactly as described."
+475,8,2026.01.07,4,Good value for the price.
+476,9,07 March 2026,3,Broke after two weeks.
+477,72,2026-02-01,4,Really happy with this purchase.
+478,19,2026.01.28,2,"Arrived damaged, disappointed."
+479,110,12 February 2026,5,"Works great, exactly as described."
+480,28,2026-01-14,3,Customer service was unhelpful.
+481,29,13 February 2026,5,Really happy with this purchase.
+482,62,03/06/2026,5,Really happy with this purchase.
+483,24,20 January 2026,5,Really happy with this purchase.
+484,139,11 February 2026,5,"Solid build quality, would buy again."
+485,68,2026-01-08,5,"Solid build quality, would buy again."
+486,49,13 March 2026,4,"Solid build quality, would buy again."
+487,44,18 March 2026,5,Good value for the price.
+488,126,2026.01.25,3,Customer service was unhelpful.
+489,67,17 February 2026,5,Really happy with this purchase.
+490,79,2026-02-09,5,Really happy with this purchase.
+491,41,01/30/2026,5,"Solid build quality, would buy again."
+492,24,01/08/2026,5,"Works great, exactly as described."
+493,68,2026.02.08,4,"Solid build quality, would buy again."
+494,94,2026-03-09,3,"Arrived damaged, disappointed."
+495,103,2026-02-11,4,Good value for the price.
+496,41,2026.01.25,4,"Solid build quality, would buy again."
+497,32,2026-02-18,5,Exceeded my expectations.
+498,56,02/16/2026,3,"Arrived damaged, disappointed."
+499,102,13 January 2026,3,Doesn't match the description.
+500,149,01/07/2026,4,"Solid build quality, would buy again."
+501,73,18 January 2026,3,"Arrived damaged, disappointed."
+502,113,2026.02.07,3,Customer service was unhelpful.
+503,1,10 January 2026,4,Exceeded my expectations.
+504,64,2026.03.10,4,Exceeded my expectations.
+505,135,2026.02.05,3,Broke after two weeks.
+506,67,2026.01.23,5,"Works great, exactly as described."
+507,34,06 March 2026,4,Really happy with this purchase.
+508,18,17 January 2026,4,Exceeded my expectations.
+509,81,2026.02.26,3,Broke after two weeks.
+510,94,2026-02-21,3,"Arrived damaged, disappointed."
+511,105,01/13/2026,4,Exceeded my expectations.
+512,50,21 March 2026,5,Really happy with this purchase.
+513,67,2026-01-24,4,Good value for the price.
+514,116,17 February 2026,5,Really happy with this purchase.
+515,35,03/12/2026,5,"Works great, exactly as described."
+516,7,2026-02-26,3,Broke after two weeks.
+517,42,2026.02.25,4,Really happy with this purchase.
+518,29,2026.03.12,4,Good value for the price.
+519,8,2026-02-13,4,"Works great, exactly as described."
+520,73,02/23/2026,4,Good value for the price.
+521,12,03/15/2026,4,"Solid build quality, would buy again."
+522,35,01/25/2026,4,Good value for the price.
+523,149,01/07/2026,3,Doesn't match the description.
+524,41,2026.01.06,5,"Solid build quality, would buy again."
+525,51,01 February 2026,4,Good value for the price.
+526,40,2026-01-09,5,"Solid build quality, would buy again."
+527,20,2026-02-19,5,"Solid build quality, would buy again."
+528,39,02/22/2026,4,Exceeded my expectations.
+529,72,2026-02-06,4,"Solid build quality, would buy again."
+530,65,2026-02-11,4,Really happy with this purchase.
+531,140,2026.03.20,3,"Arrived damaged, disappointed."
+532,14,03/18/2026,4,"Works great, exactly as described."
+533,45,2026.01.18,4,Really happy with this purchase.
+534,46,2026-03-20,2,"Arrived damaged, disappointed."
+535,2,2026.01.30,4,Good value for the price.
+536,5,2026-01-07,3,Doesn't match the description.
+537,72,2026-02-09,2,"Arrived damaged, disappointed."
+538,104,2026.02.21,4,Really happy with this purchase.
+539,45,2026-01-26,3,Doesn't match the description.
+540,127,25 February 2026,3,Customer service was unhelpful.
+541,48,30 January 2026,4,"Works great, exactly as described."
+542,111,2026.03.20,3,"Arrived damaged, disappointed."
+543,13,03/17/2026,2,Doesn't match the description.
+544,39,2026.02.14,3,Broke after two weeks.
+545,11,03/06/2026,4,"Works great, exactly as described."
+546,102,2026.03.10,4,"Works great, exactly as described."
+547,104,2026-02-18,5,"Works great, exactly as described."
+548,22,2026.02.28,5,Exceeded my expectations.
+549,86,2026-02-06,3,Doesn't match the description.
+550,32,01/23/2026,4,Exceeded my expectations.
+551,2,2026-02-16,2,Doesn't match the description.
+552,23,2026-02-11,3,Not worth the price.
+553,140,02 March 2026,4,Exceeded my expectations.
+554,15,2026-01-18,3,Customer service was unhelpful.
+555,79,04 March 2026,4,"Works great, exactly as described."
+556,138,2026.01.08,4,"Works great, exactly as described."
+557,60,2026.01.28,4,Exceeded my expectations.
+558,8,2026.01.14,3,Broke after two weeks.
+559,65,02/08/2026,5,Really happy with this purchase.
+560,138,2026-02-03,3,Customer service was unhelpful.
+561,98,2026-02-23,4,Exceeded my expectations.
+562,144,06 March 2026,5,"Solid build quality, would buy again."
+563,72,09 February 2026,4,Good value for the price.
+564,142,05 February 2026,3,Doesn't match the description.
+565,49,2026.01.11,3,Broke after two weeks.
+566,21,25 January 2026,4,Really happy with this purchase.
+567,15,09 March 2026,3,Doesn't match the description.
+568,41,2026-01-08,4,Really happy with this purchase.
+569,46,2026.02.09,4,Really happy with this purchase.
+570,145,2026-03-20,4,"Solid build quality, would buy again."
+571,127,2026-01-08,3,Doesn't match the description.
+572,87,01/20/2026,3,Broke after two weeks.
+573,18,01/28/2026,3,Not worth the price.
+574,108,2026.01.22,4,Good value for the price.
+575,84,2026-02-09,4,"Solid build quality, would buy again."
+576,111,01 February 2026,4,Really happy with this purchase.
+577,146,2026-02-11,4,"Works great, exactly as described."
+578,81,21 January 2026,3,Customer service was unhelpful.
+579,41,2026-01-31,4,Good value for the price.
+580,139,2026-02-15,4,Good value for the price.
+581,57,2026.01.07,4,"Works great, exactly as described."
+582,108,2026.01.07,4,"Solid build quality, would buy again."
+583,8,16 February 2026,4,"Solid build quality, would buy again."
+584,8,02/16/2026,5,"Solid build quality, would buy again."
+585,86,2026-01-17,3,Customer service was unhelpful.
+586,64,2026.03.18,3,Doesn't match the description.
+587,62,2026-02-07,4,Really happy with this purchase.
+588,5,21 February 2026,3,Not worth the price.
+589,57,2026.03.07,3,Customer service was unhelpful.
+590,46,12 January 2026,2,"Arrived damaged, disappointed."
+591,140,05 February 2026,3,Not worth the price.
+592,149,2026.02.10,3,Broke after two weeks.
+593,140,2026-01-10,3,Doesn't match the description.
+594,104,2026-03-15,5,"Solid build quality, would buy again."
+595,113,2026-01-07,2,Not worth the price.

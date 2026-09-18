@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-03-01T05:00:00",
+  "ip_address": "198.51.100.23",
+  "endpoint": "/api/checkout",
+  "response_time_ms": 896
+}
