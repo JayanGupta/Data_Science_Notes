@@ -1,1 +1,0 @@
-# not a log file, wrong extension -- should be ignored by the extension filter
